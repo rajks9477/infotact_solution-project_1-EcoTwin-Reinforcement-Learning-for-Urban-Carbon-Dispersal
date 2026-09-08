@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edges xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/edges_file.xsd">
+    <!-- North Corridor (2 Lanes, 13.89 m/s) -->
+    <edge id="N2C" from="north" to="center" priority="75" numLanes="2" speed="13.89"/>
+    <edge id="C2N" from="center" to="north" priority="75" numLanes="2" speed="13.89"/>
+
+    <!-- South Corridor -->
+    <edge id="S2C" from="south" to="center" priority="75" numLanes="2" speed="13.89"/>
+    <edge id="C2S" from="center" to="south" priority="75" numLanes="2" speed="13.89"/>
+
+    <!-- East Corridor -->
+    <edge id="E2C" from="east" to="center" priority="75" numLanes="2" speed="13.89"/>
+    <edge id="C2E" from="center" to="east" priority="75" numLanes="2" speed="13.89"/>
+
+    <!-- West Corridor -->
+    <edge id="W2C" from="west" to="center" priority="75" numLanes="2" speed="13.89"/>
+    <edge id="C2W" from="center" to="west" priority="75" numLanes="2" speed="13.89"/>
+</edges>
