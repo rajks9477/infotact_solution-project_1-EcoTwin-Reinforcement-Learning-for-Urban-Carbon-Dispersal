@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <!-- 1. Standard Passenger Car: Euro 4 Petrol -->
+    <vType id="passenger_car" 
+           accel="2.6" 
+           decel="4.5" 
+           sigma="0.5" 
+           length="5.0" 
+           minGap="2.5" 
+           maxSpeed="13.89" 
+           color="0,150,255" 
+           emissionClass="HBEFA3/PC_G_EU4" 
+           guiShape="passenger"/>
+
+    <!-- 2. Heavy Commercial Diesel Truck: High CO2 and Smog emitter -->
+    <vType id="heavy_truck" 
+           accel="1.2" 
+           decel="3.0" 
+           sigma="0.5" 
+           length="10.0" 
+           minGap="3.0" 
+           maxSpeed="10.0" 
+           color="255,100,0" 
+           emissionClass="HBEFA3/HDV" 
+           guiShape="truck"/>
+
+    <!-- 3. Eco / Electric Vehicle: Low emission benchmark -->
+    <vType id="eco_electric" 
+           accel="3.0" 
+           decel="4.5" 
+           sigma="0.3" 
+           length="4.8" 
+           minGap="2.0" 
+           maxSpeed="13.89" 
+           color="0,255,120" 
+           emissionClass="Zero/unknown" 
+           guiShape="passenger/sedan"/>
+</additional>
