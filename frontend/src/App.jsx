@@ -1,15 +1,29 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import CityMap from './components/CityMap';
+import MetricsPanel from './components/MetricsPanel';
 
 /**
  * Root Application Container
- * Author: Subhransu Sekhar Swain (Day 3 Deliverable)
- * Orchestrates Navbar, Leaflet Geospatial View, and Telemetry Summary HUD.
+ * Author: Subhransu Sekhar Swain (Frontend Lead - Day 4 Deliverable)
+ * Integrates Navbar, Leaflet Geospatial View, and Telemetry Controls Panel.
  */
 
 export default function App() {
   const [selectedCorridor, setSelectedCorridor] = useState(null);
+  const [currentPhase, setCurrentPhase] = useState(0);
+  const [simStep, setSimStep] = useState(1);
+
+  const handleStepSimulation = () => {
+    setSimStep((prev) => prev + 1);
+    setCurrentPhase((prev) => (prev + 1) % 4);
+  };
+
+  const handleResetSimulation = () => {
+    setSimStep(1);
+    setCurrentPhase(0);
+    setSelectedCorridor(null);
+  };
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
@@ -22,18 +36,18 @@ export default function App() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
             <p className="text-xs text-slate-400 uppercase font-semibold">Active Vehicles</p>
-            <p className="text-2xl font-bold text-emerald-400 mt-1">320</p>
+            <p className="text-2xl font-bold text-emerald-400 mt-1">{120 + (simStep * 2)}</p>
             <p className="text-[11px] text-slate-500 mt-1">Multi-fleet: Petrol, HDV & EV</p>
           </div>
           <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
             <p className="text-xs text-slate-400 uppercase font-semibold">CO2 Emission Rate</p>
-            <p className="text-2xl font-bold text-amber-400 mt-1">4.28 g/s</p>
+            <p className="text-2xl font-bold text-amber-400 mt-1">{(3.8 + (simStep * 0.05)).toFixed(2)} g/s</p>
             <p className="text-[11px] text-amber-500/80 mt-1">HBEFA3 Micro-model active</p>
           </div>
           <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
-            <p className="text-xs text-slate-400 uppercase font-semibold">RL Agent Policy</p>
-            <p className="text-2xl font-bold text-blue-400 mt-1">PPO-EcoDisperse</p>
-            <p className="text-[11px] text-blue-400/80 mt-1">Cycle duration: 45s</p>
+            <p className="text-xs text-slate-400 uppercase font-semibold">Simulation Step</p>
+            <p className="text-2xl font-bold text-blue-400 mt-1">{simStep}s</p>
+            <p className="text-[11px] text-blue-400/80 mt-1">Clock Sync: 1.0s</p>
           </div>
           <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
             <p className="text-xs text-slate-400 uppercase font-semibold">Worst Hotspot</p>
@@ -42,12 +56,21 @@ export default function App() {
           </div>
         </div>
 
-        {/* Geospatial Map Canvas */}
-        <div className="w-full">
-          <CityMap 
-            selectedCorridor={selectedCorridor?.id} 
-            onSelectCorridor={(c) => setSelectedCorridor(c)} 
-          />
+        {/* 2-Column Grid: Geospatial Map Canvas + Controls/Metrics Panel */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="lg:col-span-2">
+            <CityMap 
+              selectedCorridor={selectedCorridor?.id} 
+              onSelectCorridor={(c) => setSelectedCorridor(c)} 
+            />
+          </div>
+          <div className="lg:col-span-1">
+            <MetricsPanel 
+              currentPhase={currentPhase}
+              onStepSimulation={handleStepSimulation}
+              onResetSimulation={handleResetSimulation}
+            />
+          </div>
         </div>
       </main>
     </div>
