@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import CityMap from './components/CityMap';
 import MetricsPanel from './components/MetricsPanel';
+import EmissionCharts from './components/EmissionCharts';
 
 /**
  * Root Application Container
- * Author: Subhransu Sekhar Swain (Frontend Lead - Day 4 Deliverable)
- * Integrates Navbar, Leaflet Geospatial View, and Telemetry Controls Panel.
+ * Author: Subhransu Sekhar Swain (Frontend Lead - Day 5 Deliverable)
+ * Integrates Navbar, Leaflet Geospatial View, Metrics Panel, and Comparative Charts.
  */
 
 export default function App() {
@@ -71,6 +72,11 @@ export default function App() {
               onResetSimulation={handleResetSimulation}
             />
           </div>
+        </div>
+
+        {/* Real-time Environmental Comparison Charts */}
+        <div className="w-full">
+          <EmissionCharts />
         </div>
       </main>
     </div>
