@@ -1,0 +1,8 @@
+{
+    "controller": "Traditional Fixed-Time (30s)",
+    "total_steps": 100,
+    "final_cumulative_co2_grams": 4950.46,
+    "total_delay_vehicle_seconds": 11017.2,
+    "mean_queue_length": 110.17,
+    "worst_corridor": "South Corridor Inbound (E_S2C)"
+}
