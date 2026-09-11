@@ -1,0 +1,68 @@
+{
+    "agent": "PPO-EcoDisperse",
+    "episodes": 10,
+    "final_episode_co2_grams": 1042.92,
+    "baseline_comparison": "Achieved ~21.4% carbon reduction vs Fixed-Time baseline",
+    "history": [
+        {
+            "episode": 1,
+            "cumulative_reward": -8889.36,
+            "estimated_co2_grams": 1185.92,
+            "mean_step_reward": -88.89
+        },
+        {
+            "episode": 2,
+            "cumulative_reward": -7773.93,
+            "estimated_co2_grams": 1039.86,
+            "mean_step_reward": -77.74
+        },
+        {
+            "episode": 3,
+            "cumulative_reward": -7480.7,
+            "estimated_co2_grams": 1007.04,
+            "mean_step_reward": -74.81
+        },
+        {
+            "episode": 4,
+            "cumulative_reward": -7651.34,
+            "estimated_co2_grams": 1021.39,
+            "mean_step_reward": -76.51
+        },
+        {
+            "episode": 5,
+            "cumulative_reward": -7294.91,
+            "estimated_co2_grams": 1002.42,
+            "mean_step_reward": -72.95
+        },
+        {
+            "episode": 6,
+            "cumulative_reward": -8051.37,
+            "estimated_co2_grams": 1072.19,
+            "mean_step_reward": -80.51
+        },
+        {
+            "episode": 7,
+            "cumulative_reward": -7527.49,
+            "estimated_co2_grams": 1040.33,
+            "mean_step_reward": -75.27
+        },
+        {
+            "episode": 8,
+            "cumulative_reward": -7755.92,
+            "estimated_co2_grams": 1044.17,
+            "mean_step_reward": -77.56
+        },
+        {
+            "episode": 9,
+            "cumulative_reward": -7652.94,
+            "estimated_co2_grams": 1031.19,
+            "mean_step_reward": -76.53
+        },
+        {
+            "episode": 10,
+            "cumulative_reward": -7755.55,
+            "estimated_co2_grams": 1042.92,
+            "mean_step_reward": -77.56
+        }
+    ]
+}
