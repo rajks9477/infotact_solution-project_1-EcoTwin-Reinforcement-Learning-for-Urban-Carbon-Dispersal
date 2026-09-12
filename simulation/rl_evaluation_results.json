@@ -1,0 +1,9 @@
+{
+    "controller": "PPO-EcoDisperse RL Agent",
+    "total_steps": 100,
+    "final_cumulative_co2_grams": 315.9,
+    "total_delay_vehicle_seconds": 1151.0,
+    "mean_queue_length": 11.51,
+    "co2_reduction_vs_baseline": "21.4%",
+    "status": "Validated Closed-Loop Controller"
+}
