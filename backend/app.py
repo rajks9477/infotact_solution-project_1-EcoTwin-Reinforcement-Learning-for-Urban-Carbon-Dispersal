@@ -1,14 +1,15 @@
 """
 EcoTwin - Central FastAPI Application Gateway
-Author: Ashutosh Sahoo (Backend Lead - Day 5 Deliverable)
-Description: Integrates CORS middleware, health check status,
-             and mounts real-time telemetry streaming routers.
+Author: Ashutosh Sahoo (Backend Lead - Day 6 Deliverable)
+Description: Integrates CORS middleware, health checks, telemetry streams,
+             and mounts the RL agent controller policy switcher.
 """
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from backend.config import settings
 from backend.routes.telemetry import router as telemetry_router
+from backend.routes.rl_controller import router as rl_router
 
 app = FastAPI(
     title="EcoTwin API Gateway",
@@ -25,8 +26,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Mount Telemetry & WebSocket Router
+# Mount Telemetry & RL Controller Routers
 app.include_router(telemetry_router)
+app.include_router(rl_router)
 
 
 @app.get("/health", tags=["Health"])
