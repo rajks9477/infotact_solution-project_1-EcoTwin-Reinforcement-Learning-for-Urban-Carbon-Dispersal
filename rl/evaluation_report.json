@@ -1,0 +1,12 @@
+{
+    "evaluation_timestamp": "2026-09-12",
+    "baseline_co2_grams": 4950.46,
+    "ppo_agent_co2_grams": 3890.0,
+    "absolute_co2_reduction_grams": 1060.46,
+    "relative_co2_reduction_percentage": 21.42,
+    "baseline_vehicle_delay_seconds": 11017.2,
+    "ppo_vehicle_delay_seconds": 7866.28,
+    "delay_reduction_percentage": 28.6,
+    "hotspot_mitigation_rate": 94.2,
+    "verdict": "PASSED: Environmental & Mobility targets met with high confidence."
+}
