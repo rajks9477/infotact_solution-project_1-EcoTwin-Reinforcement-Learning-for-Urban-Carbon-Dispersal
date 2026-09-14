@@ -3,12 +3,13 @@ import Navbar from './components/Navbar';
 import AlertBanner from './components/AlertBanner';
 import CityMap from './components/CityMap';
 import MetricsPanel from './components/MetricsPanel';
+import ReroutingStats from './components/ReroutingStats';
 import EmissionCharts from './components/EmissionCharts';
 
 /**
  * Root Application Container
- * Author: Subhransu Sekhar Swain (Frontend Lead - Day 6 Deliverable)
- * Integrates Navbar, Alert Banner, Leaflet Map, Metrics Panel, and Comparative Charts.
+ * Author: Subhransu Sekhar Swain (Frontend Lead - Day 7 Deliverable)
+ * Integrates Navbar, Alert Banner, Leaflet Map, Metrics, Rerouting HUD, and Comparative Charts.
  */
 
 export default function App() {
@@ -44,7 +45,7 @@ export default function App() {
           isAiEnabled={isAiEnabled}
           onToggleAi={handleToggleAi}
           hotspotCorridor="E_S2C (South Inbound)"
-          emissionRate={isAiEnabled ? "1,850 mg/s" : "4,950 mg/s"}
+          emissionRate={isAiEnabled ? "1,432 mg/s" : "4,950 mg/s"}
         />
 
         {/* Metric Highlights Strip */}
@@ -57,21 +58,21 @@ export default function App() {
           <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
             <p className="text-xs text-slate-400 uppercase font-semibold">CO2 Emission Rate</p>
             <p className="text-2xl font-bold text-amber-400 mt-1">
-              {isAiEnabled ? (3.8 + (simStep * 0.05)).toFixed(2) : (5.2 + (simStep * 0.08)).toFixed(2)} g/s
+              {isAiEnabled ? (3.35 + (simStep * 0.03)).toFixed(2) : (5.2 + (simStep * 0.08)).toFixed(2)} g/s
             </p>
             <p className="text-[11px] text-amber-500/80 mt-1">
               {isAiEnabled ? "PPO Optimized (-21.4%)" : "Uncontrolled Baseline"}
             </p>
           </div>
           <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
-            <p className="text-xs text-slate-400 uppercase font-semibold">Simulation Step</p>
-            <p className="text-2xl font-bold text-blue-400 mt-1">{simStep}s</p>
-            <p className="text-[11px] text-blue-400/80 mt-1">Clock Sync: 1.0s</p>
+            <p className="text-xs text-slate-400 uppercase font-semibold">Vehicles Diverted</p>
+            <p className="text-2xl font-bold text-blue-400 mt-1">4</p>
+            <p className="text-[11px] text-blue-400/80 mt-1">Bypass Corridors Active</p>
           </div>
           <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
             <p className="text-xs text-slate-400 uppercase font-semibold">Active Controller</p>
             <p className={`text-2xl font-bold mt-1 ${isAiEnabled ? 'text-emerald-400' : 'text-red-400'}`}>
-              {isAiEnabled ? 'PPO-Eco' : 'Fixed-Time'}
+              {isAiEnabled ? 'PPO-EcoDisperse' : 'Fixed-Time'}
             </p>
             <p className="text-[11px] text-slate-400 mt-1">
               {isAiEnabled ? "Dynamic Dispersal" : "Rigid 30s Timer"}
@@ -79,7 +80,7 @@ export default function App() {
           </div>
         </div>
 
-        {/* 2-Column Grid: Geospatial Map Canvas + Controls/Metrics Panel */}
+        {/* 2-Column Grid: Geospatial Map Canvas + Controls/Metrics & Rerouting Panel */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2">
             <CityMap 
@@ -87,7 +88,8 @@ export default function App() {
               onSelectCorridor={(c) => setSelectedCorridor(c)} 
             />
           </div>
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 space-y-6">
+            <ReroutingStats totalDiverted={4} />
             <MetricsPanel 
               currentPhase={currentPhase}
               onStepSimulation={handleStepSimulation}
