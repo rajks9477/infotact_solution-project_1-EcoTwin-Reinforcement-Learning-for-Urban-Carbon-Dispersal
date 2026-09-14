@@ -1,0 +1,9 @@
+{
+    "engine": "EcoTwin Dynamic Carbon-Aware TraCI Rerouter",
+    "total_steps": 100,
+    "emission_threshold_mg": 1500.0,
+    "total_vehicles_diverted": 4,
+    "final_cumulative_co2_grams": 335.34,
+    "hotspot_clearing_efficiency": "96.4%",
+    "status": "Validated Traffic Rerouting"
+}
