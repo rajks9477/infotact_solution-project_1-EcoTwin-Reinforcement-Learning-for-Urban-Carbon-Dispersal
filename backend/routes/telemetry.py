@@ -62,3 +62,14 @@ async def telemetry_websocket_stream(websocket: WebSocket):
         print("[WS] Client disconnected from telemetry stream.")
     except Exception as e:
         print(f"[WS ERROR] Streaming terminated: {e}")
+
+from backend.services.vehicle_stream import vehicle_stream
+
+@router.get("/vehicles")
+async def get_live_vehicles(step: int = 1):
+    """Returns real-time vehicle GPS coordinates and emissions for frontend dot rendering."""
+    return {
+        "step": step,
+        "count": 12,
+        "vehicles": vehicle_stream.get_live_vehicles(step)
+    }
