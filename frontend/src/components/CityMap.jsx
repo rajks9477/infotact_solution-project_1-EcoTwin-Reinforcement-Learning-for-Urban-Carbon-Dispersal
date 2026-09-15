@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Polyline, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import VehicleLegend from './VehicleLegend';
 
-/**
- * CityMap Component - Digital Twin Geospatial Canvas
- * Author: Subhransu Sekhar Swain (Day 3 Deliverable)
- * Visualizes 4-way urban corridor network, central signalized junction,
- * and dynamic carbon emission heatmap overlays.
- */
-
-// SUMO Grid coordinate mappings to geographic offsets centered at [20.2961, 85.8245]
 const CENTER_LAT = 20.2961;
 const CENTER_LNG = 85.8245;
 const SCALE = 0.0008;
@@ -33,18 +26,30 @@ const CORRIDORS = [
   { id: 'E_C2W', name: 'West Corridor Outbound', from: NODES.J_C, to: NODES.N_W, color: '#10b981', emission: 150 },
 ];
 
-export default function CityMap({ selectedCorridor, onSelectCorridor }) {
-  const [corridorData] = useState(CORRIDORS);
+export default function CityMap({ selectedCorridor, onSelectCorridor, simStep = 1 }) {
+  // Generate dynamic moving vehicle dots along the 4 inbound corridors
+  const movingVehicles = [
+    { id: 'veh_01', type: 'Bus', lat: NODES.N_S[0] + ((NODES.J_C[0] - NODES.N_S[0]) * (((simStep * 0.08) + 0.1) % 1)), lng: CENTER_LNG, emission: 1120, speed: 7.2 },
+    { id: 'veh_02', type: 'Car', lat: NODES.N_S[0] + ((NODES.J_C[0] - NODES.N_S[0]) * (((simStep * 0.08) + 0.5) % 1)), lng: CENTER_LNG, emission: 410, speed: 9.0 },
+    { id: 'veh_03', type: 'Truck', lat: NODES.N_N[0] + ((NODES.J_C[0] - NODES.N_N[0]) * (((simStep * 0.07) + 0.2) % 1)), lng: CENTER_LNG, emission: 850, speed: 6.5 },
+    { id: 'veh_04', type: 'Car', lat: CENTER_LAT, lng: NODES.N_E[1] + ((NODES.J_C[1] - NODES.N_E[1]) * (((simStep * 0.09) + 0.3) % 1)), emission: 380, speed: 10.1 },
+    { id: 'veh_05', type: 'Bus', lat: CENTER_LAT, lng: NODES.N_W[1] + ((NODES.J_C[1] - NODES.N_W[1]) * (((simStep * 0.06) + 0.4) % 1)), emission: 980, speed: 5.8 },
+  ];
 
   return (
     <div className="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border border-slate-700 bg-slate-900">
-      {/* HUD Header Overlay */}
+      {/* Top Left Header */}
       <div className="absolute top-4 left-4 z-[1000] bg-slate-900/90 backdrop-blur-md border border-slate-700/80 px-4 py-3 rounded-xl shadow-lg">
         <h3 className="text-sm font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
           EcoTwin Live Grid Canvas
         </h3>
-        <p className="text-xs text-slate-400 mt-0.5">Monitoring 4 Radial Corridors & Central Intersection J_C</p>
+        <p className="text-xs text-slate-400 mt-0.5">Real-time Moving Vehicle Dots & Emission Dispersion</p>
+      </div>
+
+      {/* Bottom Left Vehicle Legend */}
+      <div className="absolute bottom-4 left-4 z-[1000]">
+        <VehicleLegend />
       </div>
 
       <MapContainer
@@ -59,13 +64,13 @@ export default function CityMap({ selectedCorridor, onSelectCorridor }) {
           url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
         />
 
-        {/* Central Junction Node J_C */}
+        {/* Central Junction J_C */}
         <CircleMarker
           center={NODES.J_C}
           radius={12}
           pathOptions={{ fillColor: '#10b981', fillOpacity: 0.9, color: '#34d399', weight: 3 }}
         >
-          <Popup className="custom-popup">
+          <Popup>
             <div className="text-slate-900 text-xs font-semibold p-1">
               <p className="font-bold text-emerald-700">Central Intersection (J_C)</p>
               <p>Type: 4-Way Traffic Signal</p>
@@ -74,22 +79,8 @@ export default function CityMap({ selectedCorridor, onSelectCorridor }) {
           </Popup>
         </CircleMarker>
 
-        {/* Outer Boundary Nodes */}
-        {Object.entries(NODES).filter(([k]) => k !== 'J_C').map(([key, coord]) => (
-          <CircleMarker
-            key={key}
-            center={coord}
-            radius={7}
-            pathOptions={{ fillColor: '#64748b', fillOpacity: 0.8, color: '#94a3b8', weight: 2 }}
-          >
-            <Popup>
-              <span className="text-xs font-bold text-slate-800">Node: {key}</span>
-            </Popup>
-          </CircleMarker>
-        ))}
-
-        {/* Corridor Polylines */}
-        {corridorData.map((corridor) => (
+        {/* Corridors */}
+        {CORRIDORS.map((corridor) => (
           <Polyline
             key={corridor.id}
             positions={[corridor.from, corridor.to]}
@@ -102,15 +93,30 @@ export default function CityMap({ selectedCorridor, onSelectCorridor }) {
             eventHandlers={{
               click: () => onSelectCorridor && onSelectCorridor(corridor),
             }}
+          />
+        ))}
+
+        {/* Moving Vehicle Dots */}
+        {movingVehicles.map((v) => (
+          <CircleMarker
+            key={v.id}
+            center={[v.lat, v.lng]}
+            radius={6}
+            pathOptions={{
+              fillColor: v.emission > 800 ? '#ef4444' : v.emission > 400 ? '#f59e0b' : '#10b981',
+              fillOpacity: 0.95,
+              color: '#ffffff',
+              weight: 1.5
+            }}
           >
             <Popup>
               <div className="text-xs text-slate-900 p-1 space-y-1">
-                <p className="font-bold text-slate-800">{corridor.name}</p>
-                <p>Corridor ID: <code className="bg-slate-200 px-1 py-0.5 rounded">{corridor.id}</code></p>
-                <p>Micro-CO2 Rate: <strong className={corridor.emission > 1000 ? 'text-red-600' : 'text-emerald-600'}>{corridor.emission} mg/s</strong></p>
+                <p className="font-bold">{v.id} ({v.type})</p>
+                <p>Speed: {v.speed} m/s</p>
+                <p>CO2 Rate: <strong>{v.emission} mg/s</strong></p>
               </div>
             </Popup>
-          </Polyline>
+          </CircleMarker>
         ))}
       </MapContainer>
     </div>
