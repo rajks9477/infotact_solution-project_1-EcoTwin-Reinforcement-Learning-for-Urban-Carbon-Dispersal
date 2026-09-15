@@ -1,0 +1,49 @@
+{
+  "engine": "EcoTwin Reward Shaping System",
+  "date": "2026-09-15",
+  "parameters": {
+    "alpha": 0.35,
+    "beta": 0.45,
+    "gamma_jerk": 0.12,
+    "delta_dispersion": 0.08
+  },
+  "scenarios": [
+    {
+      "scenario": "Severe Smog Spike",
+      "reward": -43.015,
+      "breakdown": {
+        "penalty_delay": 16.45,
+        "penalty_co2": 22.185,
+        "penalty_jerk": 2.88,
+        "penalty_switch": 1.5,
+        "dispersion_bonus": 0.0,
+        "net_shaped_reward": -43.015
+      }
+    },
+    {
+      "scenario": "PPO Dispersal Phase",
+      "reward": 14.55,
+      "breakdown": {
+        "penalty_delay": 9.45,
+        "penalty_co2": 14.58,
+        "penalty_jerk": 0.48,
+        "penalty_switch": 0.0,
+        "dispersion_bonus": 39.06,
+        "net_shaped_reward": 14.55
+      }
+    },
+    {
+      "scenario": "Clean Free Flow",
+      "reward": 33.02,
+      "breakdown": {
+        "penalty_delay": 2.1,
+        "penalty_co2": 4.5,
+        "penalty_jerk": 0.12,
+        "penalty_switch": 0.0,
+        "dispersion_bonus": 39.74,
+        "net_shaped_reward": 33.02
+      }
+    }
+  ],
+  "status": "Validated Reward Formulation"
+}
