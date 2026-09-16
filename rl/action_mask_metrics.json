@@ -1,0 +1,80 @@
+{
+  "engine": "EcoTwin Action Masking Layer",
+  "date": "2026-09-16",
+  "min_green_seconds": 10,
+  "yellow_seconds": 4,
+  "test_cases": [
+    {
+      "desc": "N-S Green at 4s  (Under min-green limit)",
+      "phase": 0,
+      "elapsed": 4,
+      "mask": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "valid_actions": [
+        0
+      ]
+    },
+    {
+      "desc": "N-S Green at 12s (Eligible for yellow)",
+      "phase": 0,
+      "elapsed": 12,
+      "mask": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "valid_actions": [
+        0,
+        1
+      ]
+    },
+    {
+      "desc": "N-S Yellow at 2s (Active yellow clearance)",
+      "phase": 1,
+      "elapsed": 2,
+      "mask": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "valid_actions": [
+        1
+      ]
+    },
+    {
+      "desc": "N-S Yellow at 4s (Ready for E-W Green)",
+      "phase": 1,
+      "elapsed": 4,
+      "mask": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "valid_actions": [
+        2
+      ]
+    },
+    {
+      "desc": "E-W Green at 6s  (Under min-green limit)",
+      "phase": 2,
+      "elapsed": 6,
+      "mask": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "valid_actions": [
+        2
+      ]
+    }
+  ],
+  "status": "All safety constraints verified"
+}
