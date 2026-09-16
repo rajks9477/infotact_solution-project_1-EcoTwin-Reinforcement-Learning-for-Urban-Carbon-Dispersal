@@ -73,3 +73,20 @@ async def get_live_vehicles(step: int = 1):
         "count": 12,
         "vehicles": vehicle_stream.get_live_vehicles(step)
     }
+
+from backend.services.async_engine import async_engine
+
+@router.post("/playback")
+async def control_playback(command: str = "step", speed: float = 1.0):
+    """Controls simulation playback: play, pause, step, reset, speed."""
+    if command == "play":
+        return async_engine.play()
+    elif command == "pause":
+        return async_engine.pause()
+    elif command == "step":
+        return async_engine.step_forward()
+    elif command == "reset":
+        return async_engine.reset()
+    elif command == "speed":
+        return async_engine.set_speed(speed)
+    return {"error": "Invalid playback command"}
