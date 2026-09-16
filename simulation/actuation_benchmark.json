@@ -1,0 +1,62 @@
+{
+  "intersection": "J_C",
+  "actuator": "EcoTwin TraCI Phase Actuator",
+  "date": "2026-09-16",
+  "cycles_completed": 4,
+  "final_queues": {
+    "South": 18.2,
+    "North": 12.2,
+    "East": 2.8,
+    "West": 1.0
+  },
+  "history": [
+    {
+      "phase": 0,
+      "phase_name": "North-South Green (N-S Flush)",
+      "duration_sec": 15,
+      "resulting_queues": {
+        "South": 11.2,
+        "North": 5.2,
+        "East": 17.8,
+        "West": 15.8
+      },
+      "net_carbon_impact_mg": 1582.5
+    },
+    {
+      "phase": 1,
+      "phase_name": "North-South Yellow (Transition)",
+      "duration_sec": 4,
+      "resulting_queues": {
+        "South": 12.2,
+        "North": 6.2,
+        "East": 18.8,
+        "West": 16.8
+      },
+      "net_carbon_impact_mg": -720.0
+    },
+    {
+      "phase": 2,
+      "phase_name": "East-West Green (E-W Flush)",
+      "duration_sec": 20,
+      "resulting_queues": {
+        "South": 17.2,
+        "North": 11.2,
+        "East": 1.8,
+        "West": 0.0
+      },
+      "net_carbon_impact_mg": 2087.0
+    },
+    {
+      "phase": 3,
+      "phase_name": "East-West Yellow (Transition)",
+      "duration_sec": 4,
+      "resulting_queues": {
+        "South": 18.2,
+        "North": 12.2,
+        "East": 2.8,
+        "West": 1.0
+      },
+      "net_carbon_impact_mg": -720.0
+    }
+  ]
+}
