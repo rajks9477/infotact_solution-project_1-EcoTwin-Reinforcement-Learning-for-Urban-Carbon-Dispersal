@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import AlertBanner from './components/AlertBanner';
+import SimulationControls from './components/SimulationControls';
 import CityMap from './components/CityMap';
 import MetricsPanel from './components/MetricsPanel';
 import ReroutingStats from './components/ReroutingStats';
@@ -8,8 +9,8 @@ import EmissionCharts from './components/EmissionCharts';
 
 /**
  * Root Application Container
- * Author: Subhransu Sekhar Swain (Frontend Lead - Day 7 Deliverable)
- * Integrates Navbar, Alert Banner, Leaflet Map, Metrics, Rerouting HUD, and Comparative Charts.
+ * Author: Subhransu Sekhar Swain (Frontend Lead - Day 9 Deliverable)
+ * Integrates Navbar, Alert Banner, Playback Controls, Leaflet Map, Metrics, and Charts.
  */
 
 export default function App() {
@@ -17,6 +18,8 @@ export default function App() {
   const [currentPhase, setCurrentPhase] = useState(0);
   const [simStep, setSimStep] = useState(1);
   const [isAiEnabled, setIsAiEnabled] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [speed, setSpeed] = useState(1.0);
 
   const handleStepSimulation = () => {
     setSimStep((prev) => prev + 1);
@@ -27,20 +30,25 @@ export default function App() {
     setSimStep(1);
     setCurrentPhase(0);
     setSelectedCorridor(null);
+    setIsPlaying(false);
   };
 
   const handleToggleAi = () => {
     setIsAiEnabled((prev) => !prev);
   };
 
+  const handleTogglePlay = () => {
+    setIsPlaying((prev) => !prev);
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
-      {/* Top Navigation */}
+      {/* Top Navigation Bar */}
       <Navbar />
 
-      {/* Main Dashboard Body */}
+      {/* Main Dashboard Layout */}
       <main className="flex-1 max-w-7xl w-full mx-auto p-6 space-y-6">
-        {/* Dynamic Air Quality / Hotspot Alert Banner */}
+        {/* Dynamic Air Quality & Hotspot Alert Banner */}
         <AlertBanner 
           isAiEnabled={isAiEnabled}
           onToggleAi={handleToggleAi}
@@ -80,12 +88,24 @@ export default function App() {
           </div>
         </div>
 
+        {/* Playback Controls & Speed Multiplier HUD */}
+        <SimulationControls 
+          isPlaying={isPlaying}
+          onTogglePlay={handleTogglePlay}
+          onStepForward={handleStepSimulation}
+          onReset={handleResetSimulation}
+          currentStep={simStep}
+          speed={speed}
+          onChangeSpeed={(s) => setSpeed(s)}
+        />
+
         {/* 2-Column Grid: Geospatial Map Canvas + Controls/Metrics & Rerouting Panel */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2">
             <CityMap 
               selectedCorridor={selectedCorridor?.id} 
               onSelectCorridor={(c) => setSelectedCorridor(c)} 
+              simStep={simStep}
             />
           </div>
           <div className="lg:col-span-1 space-y-6">
@@ -93,7 +113,7 @@ export default function App() {
             <MetricsPanel 
               currentPhase={currentPhase}
               onStepSimulation={handleStepSimulation}
-              onResetSimulation={handleResetSimulation}
+              onReset={handleResetSimulation}
             />
           </div>
         </div>
