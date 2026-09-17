@@ -1,0 +1,36 @@
+{
+  "engine": "EcoTwin Adaptive AQI Reward Scheduler",
+  "date": "2026-09-17",
+  "regimes_configured": 4,
+  "benchmarks": [
+    {
+      "label": "Midnight Low Traffic",
+      "emission_mg": 320.0,
+      "alpha": 0.7,
+      "beta": 0.3,
+      "regime": "Good (Commute Priority)"
+    },
+    {
+      "label": "Midday Regular Traffic",
+      "emission_mg": 950.0,
+      "alpha": 0.5,
+      "beta": 0.5,
+      "regime": "Moderate (Balanced)"
+    },
+    {
+      "label": "Evening Rush Congestion",
+      "emission_mg": 1650.0,
+      "alpha": 0.3,
+      "beta": 0.7,
+      "regime": "Unhealthy (Dispersion Priority)"
+    },
+    {
+      "label": "Industrial Smog Crisis",
+      "emission_mg": 2800.0,
+      "alpha": 0.15,
+      "beta": 0.85,
+      "regime": "Hazardous (Emergency Smog Flush)"
+    }
+  ],
+  "status": "Adaptive scheduler verified"
+}
