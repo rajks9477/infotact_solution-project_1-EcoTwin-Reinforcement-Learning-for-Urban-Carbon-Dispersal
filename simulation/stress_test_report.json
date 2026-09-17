@@ -1,0 +1,53 @@
+{
+  "engine": "EcoTwin Multi-Scenario Stress Testing Suite",
+  "date": "2026-09-17",
+  "tested_scenarios": 3,
+  "results": {
+    "normal_flow": {
+      "scenario_key": "normal_flow",
+      "scenario_name": "Standard Urban Flow",
+      "traffic_load_multiplier": 1.0,
+      "total_co2_grams": 65.03,
+      "peak_emission_rate_mg_s": 3087.0,
+      "final_queues": {
+        "South": 4.2,
+        "North": 4.2,
+        "East": 2.4,
+        "West": 2.4
+      },
+      "clearance_efficiency_pct": 75.6,
+      "air_quality_impact": "Good"
+    },
+    "morning_rush_surge": {
+      "scenario_key": "morning_rush_surge",
+      "scenario_name": "Morning Rush Hour Surge (+80%)",
+      "traffic_load_multiplier": 1.8,
+      "total_co2_grams": 377.6,
+      "peak_emission_rate_mg_s": 12242.8,
+      "final_queues": {
+        "South": 20.0,
+        "North": 12.0,
+        "East": 8.0,
+        "West": 2.6
+      },
+      "clearance_efficiency_pct": 68.4,
+      "air_quality_impact": "Hazardous"
+    },
+    "toxic_smog_crisis": {
+      "scenario_key": "toxic_smog_crisis",
+      "scenario_name": "Toxic Industrial Smog Emergency",
+      "traffic_load_multiplier": 1.4,
+      "total_co2_grams": 455.87,
+      "peak_emission_rate_mg_s": 15534.7,
+      "final_queues": {
+        "South": 26.0,
+        "North": 5.8,
+        "East": 2.5,
+        "West": 2.5
+      },
+      "clearance_efficiency_pct": 68.1,
+      "air_quality_impact": "Hazardous"
+    }
+  },
+  "status": "All stress tests executed successfully"
+}
