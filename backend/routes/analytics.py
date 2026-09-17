@@ -42,3 +42,16 @@ async def get_corridor_analytics() -> List[Dict[str, Any]]:
         {"corridor_id": "E_C2W", "name": "West Outbound",  "co2_rate_mg": 150.0, "diverted_veh": 0, "status": "Free Flow"},
         {"corridor_id": "E_C2N", "name": "North Outbound", "co2_rate_mg": 120.0, "diverted_veh": 0, "status": "Free Flow"}
     ]
+
+from backend.services.scenario_manager import scenario_manager
+
+@router.get("/scenarios/active")
+async def get_active_scenario():
+    """Returns current active scenario and available stress profiles."""
+    return scenario_manager.get_active_scenario()
+
+
+@router.post("/scenarios/switch")
+async def switch_simulation_scenario(scenario: str = "normal_flow"):
+    """Switches active scenario profile."""
+    return scenario_manager.switch_scenario(scenario)
