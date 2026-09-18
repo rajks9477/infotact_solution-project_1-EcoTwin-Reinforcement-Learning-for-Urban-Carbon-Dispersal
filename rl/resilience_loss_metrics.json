@@ -1,0 +1,63 @@
+{
+  "engine": "EcoTwin Policy Resilience Suite",
+  "date": "2026-09-18",
+  "threshold_capacity": 24.0,
+  "lambda_regularization": 0.25,
+  "evaluations": [
+    {
+      "desc": "Greedy Starvation (South starved)",
+      "queues": [
+        28.0,
+        4.0,
+        3.0,
+        2.0
+      ],
+      "loss": 37.422,
+      "details": {
+        "mean_queue": 9.2,
+        "queue_variance": 117.69,
+        "variance_penalty": 29.422,
+        "spillover_penalty": 8.0,
+        "total_resilience_loss": 37.422,
+        "system_balance_state": "UNBALANCED_STARVATION"
+      }
+    },
+    {
+      "desc": "Moderate Dual Inflow",
+      "queues": [
+        14.0,
+        12.0,
+        7.0,
+        6.0
+      ],
+      "loss": 2.797,
+      "details": {
+        "mean_queue": 9.8,
+        "queue_variance": 11.19,
+        "variance_penalty": 2.797,
+        "spillover_penalty": 0.0,
+        "total_resilience_loss": 2.797,
+        "system_balance_state": "BALANCED_DISPERSION"
+      }
+    },
+    {
+      "desc": "Optimal EcoTwin Balanced Flow",
+      "queues": [
+        6.5,
+        6.0,
+        5.5,
+        5.0
+      ],
+      "loss": 0.078,
+      "details": {
+        "mean_queue": 5.8,
+        "queue_variance": 0.31,
+        "variance_penalty": 0.078,
+        "spillover_penalty": 0.0,
+        "total_resilience_loss": 0.078,
+        "system_balance_state": "BALANCED_DISPERSION"
+      }
+    }
+  ],
+  "status": "Resilience loss validated"
+}
