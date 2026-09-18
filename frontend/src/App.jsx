@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import AlertBanner from './components/AlertBanner';
+import NetworkStatus from './components/NetworkStatus';
 import ScenarioSelector from './components/ScenarioSelector';
 import SimulationControls from './components/SimulationControls';
 import CityMap from './components/CityMap';
@@ -10,8 +11,8 @@ import EmissionCharts from './components/EmissionCharts';
 
 /**
  * Root Application Container
- * Author: Subhransu Sekhar Swain (Frontend Lead - Day 10 Deliverable)
- * Integrates Navbar, Alert Banner, Scenario Selector, Playback Controls, Map, Metrics & Charts.
+ * Author: Subhransu Sekhar Swain (Frontend Lead - Day 11 Deliverable)
+ * Integrates Navbar, Alert Banner, Network Monitor, Scenarios, Playback Controls, Map, Metrics & Charts.
  */
 
 export default function App() {
@@ -65,6 +66,13 @@ export default function App() {
           emissionRate={isAiEnabled ? `${(1432 * scenarioMultiplier).toFixed(0)} mg/s` : `${(4950 * scenarioMultiplier).toFixed(0)} mg/s`}
         />
 
+        {/* Real-time WebSocket Streaming & Network Latency Monitor (Day 11) */}
+        <NetworkStatus 
+          isConnected={true}
+          latencyMs={18 + (simStep % 3)}
+          uptimeSec={simStep * 5}
+        />
+
         {/* Metric Highlights Strip */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl shadow">
@@ -97,7 +105,7 @@ export default function App() {
           </div>
         </div>
 
-        {/* Scenario Stress Profile Selector (Day 10) */}
+        {/* Scenario Stress Profile Selector */}
         <ScenarioSelector 
           activeScenario={activeScenario}
           onSelectScenario={(sc) => setActiveScenario(sc)}
