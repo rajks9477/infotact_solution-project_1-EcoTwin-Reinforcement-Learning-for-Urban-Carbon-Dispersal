@@ -1,0 +1,28 @@
+{
+  "engine": "EcoTwin Bottleneck Spillover Mitigation Suite",
+  "date": "2026-09-18",
+  "active_alerts_detected": [
+    {
+      "corridor_id": "E_S2C",
+      "name": "South Inbound",
+      "saturation_pct": 88.3,
+      "current_queue": 26.5,
+      "mean_speed_mps": 1.1,
+      "emission_mg": 1950.0,
+      "severity": "CRITICAL",
+      "recommended_action": "Emergency N-S Green Extension (Phase 0)"
+    }
+  ],
+  "mitigation_event": {
+    "corridor_id": "E_S2C",
+    "corridor_name": "South Inbound",
+    "flush_duration_seconds": 12,
+    "initial_queue": 26.5,
+    "resolved_queue": 13.3,
+    "speed_improvement_mps": 5.2,
+    "emission_reduction_pct": 55.0,
+    "total_carbon_saved_mg": 12870.0,
+    "mitigation_status": "BOTTLENECK_RESOLVED"
+  },
+  "system_health": "OPTIMAL_AFTER_MITIGATION"
+}
