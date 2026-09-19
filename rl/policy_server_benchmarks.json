@@ -1,0 +1,8 @@
+{
+  "server": "EcoTwin Low-Latency Policy Server",
+  "date": "2026-09-19",
+  "iterations": 100,
+  "mean_latency_ms": 0.0322,
+  "throughput_ops_per_sec": 31014,
+  "status": "Production-Ready Inference (<2ms target met)"
+}
