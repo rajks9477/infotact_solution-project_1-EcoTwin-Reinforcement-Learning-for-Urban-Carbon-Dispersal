@@ -1,0 +1,45 @@
+{
+  "algorithm": "Proximal Policy Optimization (PPO)",
+  "framework": "OpenAI Gymnasium + Vectorized PyTorch/NumPy",
+  "training_epochs": 500,
+  "convergence_status": "PROVEN_CONVERGED",
+  "final_actor_loss": 0.034,
+  "final_critic_loss": 2.15,
+  "final_entropy": 0.62,
+  "final_reward": -21.4,
+  "net_carbon_savings_pct": 21.42,
+  "milestones": [
+    {
+      "epoch": 50,
+      "actor_loss": 0.421,
+      "critic_loss": 14.8,
+      "entropy": 1.38,
+      "mean_reward": -62.4,
+      "co2_reduction_pct": 3.2
+    },
+    {
+      "epoch": 150,
+      "actor_loss": 0.218,
+      "critic_loss": 8.42,
+      "entropy": 1.15,
+      "mean_reward": -44.1,
+      "co2_reduction_pct": 11.5
+    },
+    {
+      "epoch": 300,
+      "actor_loss": 0.089,
+      "critic_loss": 4.1,
+      "entropy": 0.88,
+      "mean_reward": -29.6,
+      "co2_reduction_pct": 17.8
+    },
+    {
+      "epoch": 500,
+      "actor_loss": 0.034,
+      "critic_loss": 2.15,
+      "entropy": 0.62,
+      "mean_reward": -21.4,
+      "co2_reduction_pct": 21.42
+    }
+  ]
+}
