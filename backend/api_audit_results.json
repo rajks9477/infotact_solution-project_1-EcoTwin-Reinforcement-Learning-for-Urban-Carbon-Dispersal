@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-09-20T22:55:05Z",
+  "total_endpoints_tested": 5,
+  "endpoints_passed": 5,
+  "success_rate_pct": 100.0,
+  "latency_ms": 12.76,
+  "status": "ALL_ENDPOINTS_OPERATIONAL"
+}
