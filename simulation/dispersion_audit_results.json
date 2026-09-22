@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-09-22T23:00:14Z",
+  "wind_speed_mps": 3.5,
+  "wind_angle_deg": 45.0,
+  "receptors_audited": 3,
+  "mean_ambient_aqi": 39.7,
+  "status": "GAUSSIAN_DISPERSION_MODEL_OPERATIONAL"
+}
