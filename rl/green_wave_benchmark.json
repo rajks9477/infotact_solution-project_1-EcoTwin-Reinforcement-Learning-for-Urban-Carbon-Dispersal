@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-09-22T23:14:45Z",
+  "corridor_length_nodes": 4,
+  "ideal_phase_offset_s": 20.0,
+  "progression_speed_mps": 12.5,
+  "mean_platoon_delay_s": 2.83,
+  "coordination_bonus": 25.0,
+  "status": "GREEN_WAVE_COORDINATION_VERIFIED"
+}
