@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-09-22T23:14:58Z",
+  "total_grid_cells": 16,
+  "mean_grid_aqi": 75.5,
+  "green_wave_efficiency_pct": 84.5,
+  "status": "DISPERSION_SERVICE_OPERATIONAL"
+}
