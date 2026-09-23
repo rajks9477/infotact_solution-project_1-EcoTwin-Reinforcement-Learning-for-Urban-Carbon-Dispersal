@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-09-23T23:20:05Z",
+  "total_active_fleet": 320,
+  "breakdown": {
+    "bev": 112,
+    "hybrid": 64,
+    "ice": 144,
+    "ev_penetration_pct": 35.0
+  },
+  "charging_grid": {
+    "stations_active": 4,
+    "ports_utilization_pct": 64.7,
+    "total_grid_kw_draw": 1100
+  },
+  "estimated_co2_offset_kg_hr": 25.28
+}
