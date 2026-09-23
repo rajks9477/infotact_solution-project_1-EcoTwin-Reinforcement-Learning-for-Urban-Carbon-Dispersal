@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-09-23T23:16:13Z",
+  "total_fleet_size": 300,
+  "bev_count": 105,
+  "hybrid_count": 64,
+  "ice_count": 131,
+  "ev_penetration_pct": 35.0,
+  "vehicles_requiring_charging": 9,
+  "fleet_carbon_abatement_pct": 41.02,
+  "status": "EV_FLEET_INTEGRATION_VERIFIED"
+}
