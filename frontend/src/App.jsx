@@ -7,6 +7,7 @@ import ReviewBanner from './components/ReviewBanner';
 import IncidentControl from './components/IncidentControl';
 import DispersionOverlay from './components/DispersionOverlay';
 import FleetElectrification from './components/FleetElectrification';
+import CongestionPricing from './components/CongestionPricing';
 
 function App() {
   const [vehicles, setVehicles] = useState([]);
@@ -112,8 +113,8 @@ function App() {
           <div className="relative flex-1 min-h-[580px] bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden shadow-2xl flex flex-col">
             <div className="absolute top-4 left-4 z-20 bg-zinc-900/90 border border-zinc-700/80 rounded-lg p-2.5 backdrop-blur-md text-xs shadow-lg space-y-1">
               <div className="text-zinc-400 font-semibold uppercase tracking-wider text-[10px]">Active Simulation</div>
-              <div className="font-medium text-emerald-400">SUMO Grid Network (Heterogeneous EV Fleet)</div>
-              <div className="text-zinc-500 text-[10px]">Gaussian Atmospheric Dispersion & Powertrain Weighting Enabled</div>
+              <div className="font-medium text-emerald-400">SUMO Grid Network (Multi-Arterial Pricing Active)</div>
+              <div className="text-zinc-500 text-[10px]">Cooperative Signal Control & Elastic Tolling Online</div>
             </div>
 
             <CityMap vehicles={vehicles} />
@@ -189,6 +190,9 @@ function App() {
             </div>
           </div>
 
+          {/* Dynamic Congestion Tolling Widget */}
+          <CongestionPricing />
+
           {/* Fleet Electrification & EV Charging Hub */}
           <FleetElectrification />
 
@@ -208,26 +212,26 @@ function App() {
               <div className="space-y-2 text-xs">
                 <div className="flex justify-between py-1.5 border-b border-zinc-800/60">
                   <span className="text-zinc-400">Algorithm</span>
-                  <span className="font-semibold text-zinc-200">PPO Powertrain-Weighted</span>
+                  <span className="font-semibold text-zinc-200">Joint PPO Signal-Pricing</span>
                 </div>
                 <div className="flex justify-between py-1.5 border-b border-zinc-800/60">
-                  <span className="text-zinc-400">Green Wave Progression</span>
-                  <span className="font-semibold text-emerald-400">Synced (84.5% Efficiency)</span>
+                  <span className="text-zinc-400">Inflow Throttling</span>
+                  <span className="font-semibold text-amber-400">Elastic Cordon Surge</span>
                 </div>
                 <div className="flex justify-between py-1.5 border-b border-zinc-800/60">
                   <span className="text-zinc-400">Mean Episode Reward</span>
                   <span className="font-mono text-emerald-400 font-bold">+{stats.reward_score}</span>
                 </div>
                 <div className="flex justify-between py-1.5">
-                  <span className="text-zinc-400">Fleet Weighting</span>
-                  <span className="text-zinc-200">ICE (1.8x) vs BEV (0.25x)</span>
+                  <span className="text-zinc-400">Cooperative Regime</span>
+                  <span className="text-zinc-200">Surge Toll & Green Flush</span>
                 </div>
               </div>
             </div>
 
             <div className="pt-3 border-t border-zinc-800/80">
               <div className="bg-emerald-950/40 border border-emerald-500/30 rounded-lg p-2.5 text-[11px] text-emerald-300/90 leading-tight">
-                <strong>Day 16 Electrification:</strong> Powertrain queue weighting and EV charging grid monitoring active.
+                <strong>Day 17 Dynamic Tolling:</strong> Cordon tariffs and cooperative green phase flushing active across high-demand sectors.
               </div>
             </div>
           </div>
