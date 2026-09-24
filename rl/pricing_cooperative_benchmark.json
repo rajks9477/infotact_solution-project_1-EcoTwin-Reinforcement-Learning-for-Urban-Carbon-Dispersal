@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-09-24T23:09:58Z",
+  "sectors_controlled": 4,
+  "throttled_sectors": 3,
+  "mean_toll_multiplier": 1.32,
+  "status": "COOPERATIVE_PRICING_POLICY_VERIFIED"
+}
