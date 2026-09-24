@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-09-24T22:57:10Z",
+  "corridors_analyzed": 4,
+  "mean_dynamic_toll_usd": 3.23,
+  "total_vehicles_diverted": 40,
+  "status": "CONGESTION_PRICING_MODEL_OPERATIONAL"
+}
