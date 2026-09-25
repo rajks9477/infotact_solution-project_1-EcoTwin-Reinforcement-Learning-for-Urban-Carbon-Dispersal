@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-09-25T21:43:12Z",
+  "profiles_tested": 4,
+  "max_emission_surge_multiplier": 1.42,
+  "max_friction_loss_pct": 38.8,
+  "status": "WEATHER_FRICTION_MODEL_OPERATIONAL"
+}
