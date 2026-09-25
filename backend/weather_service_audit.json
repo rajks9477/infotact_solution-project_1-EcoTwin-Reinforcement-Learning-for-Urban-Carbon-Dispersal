@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-09-25T21:52:44Z",
+  "condition_key": "heavy_rain",
+  "display_name": "Torrential Rain",
+  "temperature_celsius": 19,
+  "pavement_friction_mu": 0.52,
+  "emission_surge_multiplier": 1.28,
+  "visibility_range_m": 350,
+  "status": "WEATHER_TELEMETRY_ONLINE"
+}
