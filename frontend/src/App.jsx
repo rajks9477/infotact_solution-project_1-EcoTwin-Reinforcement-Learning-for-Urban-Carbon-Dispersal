@@ -8,6 +8,7 @@ import IncidentControl from './components/IncidentControl';
 import DispersionOverlay from './components/DispersionOverlay';
 import FleetElectrification from './components/FleetElectrification';
 import CongestionPricing from './components/CongestionPricing';
+import WeatherControl from './components/WeatherControl';
 
 function App() {
   const [vehicles, setVehicles] = useState([]);
@@ -24,6 +25,7 @@ function App() {
   const [simSpeed, setSimSpeed] = useState(1.0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [activeIncident, setActiveIncident] = useState(null);
+  const [activeWeather, setActiveWeather] = useState('clear');
 
   useEffect(() => {
     let intervalId;
@@ -76,6 +78,11 @@ function App() {
     setActiveIncident(incident);
   };
 
+  const handleWeatherChange = (weatherId) => {
+    setActiveWeather(weatherId);
+    fetch(`http://localhost:8000/api/weather/set?condition=${weatherId}`, { method: 'POST' }).catch(() => {});
+  };
+
   return (
     <div className="min-h-screen bg-zinc-950 text-white flex flex-col font-sans selection:bg-emerald-500 selection:text-black">
       <ReviewBanner />
@@ -113,8 +120,8 @@ function App() {
           <div className="relative flex-1 min-h-[580px] bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden shadow-2xl flex flex-col">
             <div className="absolute top-4 left-4 z-20 bg-zinc-900/90 border border-zinc-700/80 rounded-lg p-2.5 backdrop-blur-md text-xs shadow-lg space-y-1">
               <div className="text-zinc-400 font-semibold uppercase tracking-wider text-[10px]">Active Simulation</div>
-              <div className="font-medium text-emerald-400">SUMO Grid Network (Multi-Arterial Pricing Active)</div>
-              <div className="text-zinc-500 text-[10px]">Cooperative Signal Control & Elastic Tolling Online</div>
+              <div className="font-medium text-emerald-400">SUMO Grid Network (Weather-Friction Module)</div>
+              <div className="text-zinc-500 text-[10px]">Current Profile: {activeWeather.toUpperCase()}</div>
             </div>
 
             <CityMap vehicles={vehicles} />
@@ -190,6 +197,9 @@ function App() {
             </div>
           </div>
 
+          {/* Meteorological & Friction Controller */}
+          <WeatherControl onWeatherChange={handleWeatherChange} />
+
           {/* Dynamic Congestion Tolling Widget */}
           <CongestionPricing />
 
@@ -212,26 +222,26 @@ function App() {
               <div className="space-y-2 text-xs">
                 <div className="flex justify-between py-1.5 border-b border-zinc-800/60">
                   <span className="text-zinc-400">Algorithm</span>
-                  <span className="font-semibold text-zinc-200">Joint PPO Signal-Pricing</span>
+                  <span className="font-semibold text-zinc-200">Weather-Adaptive PPO</span>
                 </div>
                 <div className="flex justify-between py-1.5 border-b border-zinc-800/60">
-                  <span className="text-zinc-400">Inflow Throttling</span>
-                  <span className="font-semibold text-amber-400">Elastic Cordon Surge</span>
+                  <span className="text-zinc-400">Clearance Buffer</span>
+                  <span className="font-semibold text-sky-400">Extended (+50% Rain Buffer)</span>
                 </div>
                 <div className="flex justify-between py-1.5 border-b border-zinc-800/60">
                   <span className="text-zinc-400">Mean Episode Reward</span>
                   <span className="font-mono text-emerald-400 font-bold">+{stats.reward_score}</span>
                 </div>
                 <div className="flex justify-between py-1.5">
-                  <span className="text-zinc-400">Cooperative Regime</span>
-                  <span className="text-zinc-200">Surge Toll & Green Flush</span>
+                  <span className="text-zinc-400">Pavement Safety Guard</span>
+                  <span className="text-zinc-200">Anti-Skid Jerk Dampener</span>
                 </div>
               </div>
             </div>
 
             <div className="pt-3 border-t border-zinc-800/80">
               <div className="bg-emerald-950/40 border border-emerald-500/30 rounded-lg p-2.5 text-[11px] text-emerald-300/90 leading-tight">
-                <strong>Day 17 Dynamic Tolling:</strong> Cordon tariffs and cooperative green phase flushing active across high-demand sectors.
+                <strong>Day 18 Weather Guard:</strong> Adaptive yellow buffers and wet pavement deceleration damping online.
               </div>
             </div>
           </div>
