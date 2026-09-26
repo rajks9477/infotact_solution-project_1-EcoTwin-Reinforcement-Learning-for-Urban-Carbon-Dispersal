@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-09-26T23:21:29Z",
+  "service_status": "OPERATIONAL",
+  "mock_dispatches": 1,
+  "preemption_speedup_ratio": 2.4,
+  "status": "PREEMPTION_SERVICE_ONLINE"
+}
