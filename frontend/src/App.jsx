@@ -9,6 +9,7 @@ import DispersionOverlay from './components/DispersionOverlay';
 import FleetElectrification from './components/FleetElectrification';
 import CongestionPricing from './components/CongestionPricing';
 import WeatherControl from './components/WeatherControl';
+import EmergencyPreemption from './components/EmergencyPreemption';
 
 function App() {
   const [vehicles, setVehicles] = useState([]);
@@ -26,6 +27,7 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(true);
   const [activeIncident, setActiveIncident] = useState(null);
   const [activeWeather, setActiveWeather] = useState('clear');
+  const [activeEmergency, setActiveEmergency] = useState(null);
 
   useEffect(() => {
     let intervalId;
@@ -83,6 +85,10 @@ function App() {
     fetch(`http://localhost:8000/api/weather/set?condition=${weatherId}`, { method: 'POST' }).catch(() => {});
   };
 
+  const handleEmergencyDispatch = (dispatchData) => {
+    setActiveEmergency(dispatchData);
+  };
+
   return (
     <div className="min-h-screen bg-zinc-950 text-white flex flex-col font-sans selection:bg-emerald-500 selection:text-black">
       <ReviewBanner />
@@ -120,8 +126,10 @@ function App() {
           <div className="relative flex-1 min-h-[580px] bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden shadow-2xl flex flex-col">
             <div className="absolute top-4 left-4 z-20 bg-zinc-900/90 border border-zinc-700/80 rounded-lg p-2.5 backdrop-blur-md text-xs shadow-lg space-y-1">
               <div className="text-zinc-400 font-semibold uppercase tracking-wider text-[10px]">Active Simulation</div>
-              <div className="font-medium text-emerald-400">SUMO Grid Network (Weather-Friction Module)</div>
-              <div className="text-zinc-500 text-[10px]">Current Profile: {activeWeather.toUpperCase()}</div>
+              <div className="font-medium text-emerald-400">SUMO Grid Network (EVP Blue-Light Enabled)</div>
+              <div className="text-zinc-500 text-[10px]">
+                {activeEmergency ? `PRIORITY: ${activeEmergency.type}` : 'Normal Signal Operations'}
+              </div>
             </div>
 
             <CityMap vehicles={vehicles} />
@@ -197,6 +205,9 @@ function App() {
             </div>
           </div>
 
+          {/* Emergency Preemption & Blue-Light Widget */}
+          <EmergencyPreemption onDispatch={handleEmergencyDispatch} />
+
           {/* Meteorological & Friction Controller */}
           <WeatherControl onWeatherChange={handleWeatherChange} />
 
@@ -222,26 +233,26 @@ function App() {
               <div className="space-y-2 text-xs">
                 <div className="flex justify-between py-1.5 border-b border-zinc-800/60">
                   <span className="text-zinc-400">Algorithm</span>
-                  <span className="font-semibold text-zinc-200">Weather-Adaptive PPO</span>
+                  <span className="font-semibold text-zinc-200">Resilient EVP PPO Agent</span>
                 </div>
                 <div className="flex justify-between py-1.5 border-b border-zinc-800/60">
-                  <span className="text-zinc-400">Clearance Buffer</span>
-                  <span className="font-semibold text-sky-400">Extended (+50% Rain Buffer)</span>
+                  <span className="text-zinc-400">Preemption Override</span>
+                  <span className="font-semibold text-blue-400">Blue-Light Green Wave</span>
                 </div>
                 <div className="flex justify-between py-1.5 border-b border-zinc-800/60">
-                  <span className="text-zinc-400">Mean Episode Reward</span>
-                  <span className="font-mono text-emerald-400 font-bold">+{stats.reward_score}</span>
+                  <span className="text-zinc-400">Post-EVP Recovery</span>
+                  <span className="font-semibold text-emerald-400">Compensatory Flush (+35%)</span>
                 </div>
                 <div className="flex justify-between py-1.5">
-                  <span className="text-zinc-400">Pavement Safety Guard</span>
-                  <span className="text-zinc-200">Anti-Skid Jerk Dampener</span>
+                  <span className="text-zinc-400">Cross-Street Safety</span>
+                  <span className="text-zinc-200">All-Red Hold Guaranteed</span>
                 </div>
               </div>
             </div>
 
             <div className="pt-3 border-t border-zinc-800/80">
               <div className="bg-emerald-950/40 border border-emerald-500/30 rounded-lg p-2.5 text-[11px] text-emerald-300/90 leading-tight">
-                <strong>Day 18 Weather Guard:</strong> Adaptive yellow buffers and wet pavement deceleration damping online.
+                <strong>Day 19 Preemption Online:</strong> V2X emergency preemption corridors and automatic post-clearance queue flush enabled.
               </div>
             </div>
           </div>
