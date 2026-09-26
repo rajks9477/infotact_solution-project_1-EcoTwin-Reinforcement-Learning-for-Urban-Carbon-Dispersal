@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-09-26T23:16:28Z",
+  "emergency_hold_duration_s": 25,
+  "recovery_flush_duration_s": 40,
+  "cross_queue_mitigation_efficiency_pct": 92.4,
+  "status": "PREEMPTION_POLICY_VALIDATED"
+}
