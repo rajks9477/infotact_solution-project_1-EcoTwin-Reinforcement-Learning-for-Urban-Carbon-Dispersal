@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-09-26T23:08:04Z",
+  "vehicles_dispatched": 3,
+  "mean_corridor_eta_s": 63.2,
+  "emergency_clearance_success_pct": 100.0,
+  "status": "EVP_CORRIDOR_OPERATIONAL"
+}
