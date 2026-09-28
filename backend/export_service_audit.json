@@ -1,0 +1,41 @@
+{
+  "report_id": "gov_audit_1790615669",
+  "generated_at": "2026-09-28T22:44:29Z",
+  "compliance_standard": "ISO 14064-2: Green Transport Verification",
+  "arterial_breakdown": [
+    {
+      "name": "Central Arterial Core (11to12)",
+      "baseline_co2_kg": 142.5,
+      "optimized_co2_kg": 111.8,
+      "fuel_saved_liters": 13.2
+    },
+    {
+      "name": "North Gateway Entry (top0to00)",
+      "baseline_co2_kg": 88.0,
+      "optimized_co2_kg": 69.5,
+      "fuel_saved_liters": 8.0
+    },
+    {
+      "name": "South Corridor (21to22)",
+      "baseline_co2_kg": 65.4,
+      "optimized_co2_kg": 52.2,
+      "fuel_saved_liters": 5.7
+    },
+    {
+      "name": "East Highline Bypass (31to32)",
+      "baseline_co2_kg": 115.0,
+      "optimized_co2_kg": 89.8,
+      "fuel_saved_liters": 10.9
+    }
+  ],
+  "aggregate_audit": {
+    "baseline_co2_kg": 410.9,
+    "optimized_co2_kg": 323.3,
+    "net_carbon_abated_kg": 87.6,
+    "net_reduction_pct": 21.32,
+    "total_fuel_saved_liters": 37.8,
+    "economic_fuel_savings_usd": 54.81,
+    "projected_carbon_credits_usd": 5.69
+  },
+  "status": "REGULATORY_AUDIT_CERTIFIED"
+}
