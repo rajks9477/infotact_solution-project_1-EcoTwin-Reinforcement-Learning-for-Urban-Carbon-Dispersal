@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-09-29T23:18:59Z",
+  "conversion_standard": "OSM_TO_SUMO_NETCONVERT_V1",
+  "audit_data": {
+    "bounding_box": {
+      "min_lat": 28.612,
+      "max_lat": 28.632,
+      "min_lon": 77.215,
+      "max_lon": 77.235
+    },
+    "parsed_arterials_count": 4,
+    "total_lane_km": 18.0,
+    "signalized_junctions": 3,
+    "arterials": [
+      {
+        "osm_id": "way_101",
+        "name": "Outer Ring Arterial",
+        "highway": "primary",
+        "lanes": 3,
+        "speed_kmh": 60.0,
+        "signalized": true
+      },
+      {
+        "osm_id": "way_102",
+        "name": "Commercial Central Blvd",
+        "highway": "primary",
+        "lanes": 3,
+        "speed_kmh": 50.0,
+        "signalized": true
+      },
+      {
+        "osm_id": "way_103",
+        "name": "Hospital Emergency Access",
+        "highway": "secondary",
+        "lanes": 2,
+        "speed_kmh": 40.0,
+        "signalized": true
+      },
+      {
+        "osm_id": "way_104",
+        "name": "Transit Station Corridor",
+        "highway": "secondary",
+        "lanes": 2,
+        "speed_kmh": 40.0,
+        "signalized": false
+      }
+    ]
+  },
+  "status": "OSM_CONVERSION_OPERATIONAL"
+}
