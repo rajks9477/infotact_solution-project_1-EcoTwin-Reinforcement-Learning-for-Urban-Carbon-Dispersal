@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-09-29T23:25:50Z",
+  "protocol": "SAE J2735 / C-V2X 5G NR",
+  "active_intersections": 4,
+  "connected_fleet_penetration_pct": 40.0,
+  "spat_payloads": [
+    {
+      "junc_id": "junc_00",
+      "current_phase": "GREEN",
+      "remaining_s": 14.2,
+      "next_phase": "YELLOW",
+      "min_speed_mps": 8.0,
+      "max_speed_mps": 14.0
+    },
+    {
+      "junc_id": "junc_01",
+      "current_phase": "RED",
+      "time_to_green_s": 18.0,
+      "next_phase": "GREEN",
+      "min_speed_mps": 6.5,
+      "max_speed_mps": 11.0
+    },
+    {
+      "junc_id": "junc_02",
+      "current_phase": "GREEN",
+      "remaining_s": 22.5,
+      "next_phase": "YELLOW",
+      "min_speed_mps": 9.0,
+      "max_speed_mps": 15.0
+    },
+    {
+      "junc_id": "junc_03",
+      "current_phase": "RED",
+      "time_to_green_s": 8.4,
+      "next_phase": "GREEN",
+      "min_speed_mps": 7.0,
+      "max_speed_mps": 12.0
+    }
+  ],
+  "status": "I2V_BROADCAST_ACTIVE"
+}

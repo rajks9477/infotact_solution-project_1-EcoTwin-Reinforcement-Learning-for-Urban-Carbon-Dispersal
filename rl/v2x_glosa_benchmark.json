@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-09-29T23:25:57Z",
+  "vehicles_advised": 4,
+  "mean_fuel_savings_pct": 20.3,
+  "v2x_penetration_support": "DSRC / C-V2X 5G Ready",
+  "status": "V2X_GLOSA_POLICY_VERIFIED"
+}
