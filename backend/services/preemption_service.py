@@ -40,6 +40,8 @@ class PreemptionService:
     def get_active_preemptions(self) -> List[Dict[str, Any]]:
         return [c for c in self.active_corridors.values() if c["status"] == "EN_ROUTE"]
 
+preemption_service = PreemptionService()
+
 def test_preemption_service():
     print("=" * 70)
     print("      ECOTWIN EMERGENCY PREEMPTION DISPATCH SERVICE AUDIT")

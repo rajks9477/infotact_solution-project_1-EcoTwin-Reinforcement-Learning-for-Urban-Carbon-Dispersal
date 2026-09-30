@@ -49,6 +49,8 @@ class ExportService:
             "status": "REGULATORY_AUDIT_CERTIFIED"
         }
 
+export_service = ExportService()
+
 def test_export_service():
     print("=" * 75)
     print("      ECOTWIN MUNICIPAL CARBON AUDIT & REGULATORY EXPORT AUDIT")

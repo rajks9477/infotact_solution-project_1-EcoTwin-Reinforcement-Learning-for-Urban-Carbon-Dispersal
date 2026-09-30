@@ -47,6 +47,8 @@ class PricingService:
             "system_mode": "ACTIVE_CONGESTION_PRICING"
         }
 
+pricing_service = PricingService()
+
 def test_pricing_service():
     print("=" * 70)
     print("      ECOTWIN DYNAMIC CONGESTION PRICING & TARIFF SERVICE AUDIT")

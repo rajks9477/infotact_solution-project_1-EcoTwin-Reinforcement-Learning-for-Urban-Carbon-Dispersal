@@ -26,15 +26,24 @@ const CORRIDORS = [
   { id: 'E_C2W', name: 'West Corridor Outbound', from: NODES.J_C, to: NODES.N_W, color: '#10b981', emission: 150 },
 ];
 
-export default function CityMap({ selectedCorridor, onSelectCorridor, simStep = 1 }) {
-  // Generate dynamic moving vehicle dots along the 4 inbound corridors
-  const movingVehicles = [
-    { id: 'veh_01', type: 'Bus', lat: NODES.N_S[0] + ((NODES.J_C[0] - NODES.N_S[0]) * (((simStep * 0.08) + 0.1) % 1)), lng: CENTER_LNG, emission: 1120, speed: 7.2 },
-    { id: 'veh_02', type: 'Car', lat: NODES.N_S[0] + ((NODES.J_C[0] - NODES.N_S[0]) * (((simStep * 0.08) + 0.5) % 1)), lng: CENTER_LNG, emission: 410, speed: 9.0 },
-    { id: 'veh_03', type: 'Truck', lat: NODES.N_N[0] + ((NODES.J_C[0] - NODES.N_N[0]) * (((simStep * 0.07) + 0.2) % 1)), lng: CENTER_LNG, emission: 850, speed: 6.5 },
-    { id: 'veh_04', type: 'Car', lat: CENTER_LAT, lng: NODES.N_E[1] + ((NODES.J_C[1] - NODES.N_E[1]) * (((simStep * 0.09) + 0.3) % 1)), emission: 380, speed: 10.1 },
-    { id: 'veh_05', type: 'Bus', lat: CENTER_LAT, lng: NODES.N_W[1] + ((NODES.J_C[1] - NODES.N_W[1]) * (((simStep * 0.06) + 0.4) % 1)), emission: 980, speed: 5.8 },
-  ];
+export default function CityMap({ selectedCorridor, onSelectCorridor, simStep = 1, vehicles = [] }) {
+  // Use passed live vehicles or generate dynamic moving vehicle dots along inbound corridors
+  const displayVehicles = vehicles && vehicles.length > 0
+    ? vehicles.map((v) => ({
+        id: v.vehicle_id || v.id,
+        type: v.vehicle_type || v.type || 'Car',
+        lat: v.lat,
+        lng: v.lng,
+        emission: v.instant_co2_mg || v.co2_rate || v.emission || 400,
+        speed: v.speed_mps || v.speed || 8.0,
+      }))
+    : [
+        { id: 'veh_01', type: 'Bus', lat: NODES.N_S[0] + ((NODES.J_C[0] - NODES.N_S[0]) * (((simStep * 0.08) + 0.1) % 1)), lng: CENTER_LNG, emission: 1120, speed: 7.2 },
+        { id: 'veh_02', type: 'Car', lat: NODES.N_S[0] + ((NODES.J_C[0] - NODES.N_S[0]) * (((simStep * 0.08) + 0.5) % 1)), lng: CENTER_LNG, emission: 410, speed: 9.0 },
+        { id: 'veh_03', type: 'Truck', lat: NODES.N_N[0] + ((NODES.J_C[0] - NODES.N_N[0]) * (((simStep * 0.07) + 0.2) % 1)), lng: CENTER_LNG, emission: 850, speed: 6.5 },
+        { id: 'veh_04', type: 'Car', lat: CENTER_LAT, lng: NODES.N_E[1] + ((NODES.J_C[1] - NODES.N_E[1]) * (((simStep * 0.09) + 0.3) % 1)), emission: 380, speed: 10.1 },
+        { id: 'veh_05', type: 'Bus', lat: CENTER_LAT, lng: NODES.N_W[1] + ((NODES.J_C[1] - NODES.N_W[1]) * (((simStep * 0.06) + 0.4) % 1)), emission: 980, speed: 5.8 },
+      ];
 
   return (
     <div className="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border border-slate-700 bg-slate-900">
@@ -97,7 +106,7 @@ export default function CityMap({ selectedCorridor, onSelectCorridor, simStep = 
         ))}
 
         {/* Moving Vehicle Dots */}
-        {movingVehicles.map((v) => (
+        {displayVehicles.map((v) => (
           <CircleMarker
             key={v.id}
             center={[v.lat, v.lng]}

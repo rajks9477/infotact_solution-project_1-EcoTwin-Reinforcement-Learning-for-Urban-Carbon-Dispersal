@@ -36,6 +36,8 @@ class IncidentService:
     def get_active_incidents(self) -> List[Dict[str, Any]]:
         return [inc for inc in self.incidents.values() if inc["status"] == "ACTIVE"]
 
+incident_service = IncidentService()
+
 def test_incident_service():
     print("=" * 70)
     print("      ECOTWIN INCIDENT DISPATCHER SERVICE AUDIT")

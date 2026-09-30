@@ -49,6 +49,8 @@ class DispersionService:
             }
         }
 
+dispersion_service = DispersionService()
+
 def test_dispersion_service():
     print("=" * 70)
     print("      ECOTWIN ENVIRONMENTAL DISPERSION & GREEN WAVE SERVICE AUDIT")

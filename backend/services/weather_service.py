@@ -38,6 +38,8 @@ class WeatherService:
             "status": "WEATHER_TELEMETRY_ONLINE"
         }
 
+weather_service = WeatherService()
+
 def test_weather_service():
     print("=" * 70)
     print("      ECOTWIN METEOROLOGICAL TELEMETRY SERVICE AUDIT")

@@ -11,6 +11,7 @@ from backend.config import settings
 from backend.routes.telemetry import router as telemetry_router
 from backend.routes.rl_controller import router as rl_router
 from backend.routes.analytics import router as analytics_router
+from backend.routes.microservices import router as microservices_router
 
 app = FastAPI(
     title="EcoTwin API Gateway",
@@ -31,6 +32,7 @@ app.add_middleware(
 app.include_router(telemetry_router)
 app.include_router(rl_router)
 app.include_router(analytics_router)
+app.include_router(microservices_router)
 
 
 @app.get("/health", tags=["Health"])

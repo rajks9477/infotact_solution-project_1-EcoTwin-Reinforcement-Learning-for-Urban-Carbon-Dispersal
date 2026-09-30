@@ -49,6 +49,8 @@ class FleetService:
             "estimated_co2_offset_kg_hr": round(ev_count * 0.18 + hybrid_count * 0.08, 2)
         }
 
+fleet_service = FleetService()
+
 def test_fleet_service():
     print("=" * 70)
     print("      ECOTWIN FLEET ELECTRIFICATION & CHARGING TELEMETRY AUDIT")

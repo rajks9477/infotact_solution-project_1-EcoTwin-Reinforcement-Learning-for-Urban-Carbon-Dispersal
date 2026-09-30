@@ -46,6 +46,8 @@ class LifecycleAnalyticsService:
             "status": "DAY_20_MILESTONE_COMPLETE"
         }
 
+lifecycle_service = LifecycleAnalyticsService()
+
 def test_lifecycle_service():
     print("=" * 75)
     print("      ECOTWIN LIFECYCLE ANALYTICS & EXECUTIVE REPORT SERVICE AUDIT")
