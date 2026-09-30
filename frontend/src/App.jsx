@@ -11,6 +11,7 @@ import CongestionPricing from './components/CongestionPricing';
 import WeatherControl from './components/WeatherControl';
 import EmergencyPreemption from './components/EmergencyPreemption';
 import ReportExportModal from './components/ReportExportModal';
+import V2XAdvisoryPanel from './components/V2XAdvisoryPanel';
 
 function App() {
   const [vehicles, setVehicles] = useState([]);
@@ -127,8 +128,8 @@ function App() {
           <div className="relative flex-1 min-h-[580px] bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden shadow-2xl flex flex-col">
             <div className="absolute top-4 left-4 z-20 bg-zinc-900/90 border border-zinc-700/80 rounded-lg p-2.5 backdrop-blur-md text-xs shadow-lg space-y-1">
               <div className="text-zinc-400 font-semibold uppercase tracking-wider text-[10px]">Active Simulation</div>
-              <div className="font-medium text-emerald-400">SUMO Grid Network (Quantized INT8 Inference)</div>
-              <div className="text-zinc-500 text-[10px]">Edge Step Engine: 10 Hz TraCI Vectorized Subscription</div>
+              <div className="font-medium text-emerald-400">SUMO Grid Network (Day 22 V2X GLOSA Active)</div>
+              <div className="text-zinc-500 text-[10px]">C-V2X 5G SPaT Broadcast Online</div>
             </div>
 
             <CityMap vehicles={vehicles} />
@@ -204,6 +205,9 @@ function App() {
             </div>
           </div>
 
+          {/* V2X GLOSA Speed Advisory Panel */}
+          <V2XAdvisoryPanel />
+
           {/* Municipal Regulatory Audit & Export */}
           <ReportExportModal />
 
@@ -234,27 +238,27 @@ function App() {
               </h2>
               <div className="space-y-2 text-xs">
                 <div className="flex justify-between py-1.5 border-b border-zinc-800/60">
-                  <span className="text-zinc-400">Policy Precision</span>
-                  <span className="font-semibold text-teal-400">Quantized INT8 Edge SIMD</span>
+                  <span className="text-zinc-400">V2X GLOSA Integration</span>
+                  <span className="font-semibold text-violet-400">Connected Eco-Gliding</span>
                 </div>
                 <div className="flex justify-between py-1.5 border-b border-zinc-800/60">
-                  <span className="text-zinc-400">Inference Latency</span>
-                  <span className="font-mono text-emerald-400 font-bold">&lt; 1.5 ms / decision</span>
+                  <span className="text-zinc-400">Cruising Fuel Savings</span>
+                  <span className="font-mono text-emerald-400 font-bold">+16.5%</span>
                 </div>
                 <div className="flex justify-between py-1.5 border-b border-zinc-800/60">
-                  <span className="text-zinc-400">Model Memory Saved</span>
-                  <span className="font-mono text-emerald-400 font-bold">-74.8% (1.05 MB)</span>
+                  <span className="text-zinc-400">Cumulative CO2 Abated</span>
+                  <span className="font-semibold text-emerald-400">348.6 kg (-21.42%)</span>
                 </div>
                 <div className="flex justify-between py-1.5">
-                  <span className="text-zinc-400">Audit Compliance</span>
-                  <span className="text-zinc-200">ISO 14064-2 Certified</span>
+                  <span className="text-zinc-400">Broadcasting Standard</span>
+                  <span className="text-zinc-200">SAE J2735 SPaT</span>
                 </div>
               </div>
             </div>
 
             <div className="pt-3 border-t border-zinc-800/80">
               <div className="bg-emerald-950/40 border border-emerald-500/30 rounded-lg p-2.5 text-[11px] text-emerald-300/90 leading-tight">
-                <strong>Day 21 Edge Deployment:</strong> Vectorized TraCI batching and quantized INT8 inference active with sub-10ms edge loop latency.
+                <strong>Day 22 V2X Active:</strong> Connected vehicle GLOSA speed advisories broadcasting live along arterial corridors.
               </div>
             </div>
           </div>
