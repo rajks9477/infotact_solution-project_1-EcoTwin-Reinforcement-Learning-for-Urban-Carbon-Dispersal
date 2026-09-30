@@ -1,0 +1,46 @@
+{
+  "day": 23,
+  "service": "Transit Signal Priority & Headway Management Service",
+  "headway_status": [
+    {
+      "line_id": "BRT-RED",
+      "observed_headway_min": 5.2,
+      "adherence_rate": 96.0,
+      "delayed_units": 1,
+      "status": "NOMINAL"
+    },
+    {
+      "line_id": "LRT-BLUE",
+      "observed_headway_min": 8.1,
+      "adherence_rate": 92.5,
+      "delayed_units": 1,
+      "status": "ACCEPTABLE"
+    }
+  ],
+  "tsp_call_records": [
+    {
+      "vehicle_id": "BRT_101",
+      "junction_id": "junc_00",
+      "priority_level": "HIGH",
+      "queue_clearance_hold_sec": 6.0,
+      "signal_override_command": "TRIGGER_PREEMPTIVE_GREEN",
+      "co2_mitigation_benefit_pct": 14.5
+    },
+    {
+      "vehicle_id": "LRT_204",
+      "junction_id": "junc_03",
+      "priority_level": "HIGH",
+      "queue_clearance_hold_sec": 6.0,
+      "signal_override_command": "TRIGGER_PREEMPTIVE_GREEN",
+      "co2_mitigation_benefit_pct": 14.5
+    },
+    {
+      "vehicle_id": "BRT_105",
+      "junction_id": "junc_01",
+      "priority_level": "STANDARD",
+      "queue_clearance_hold_sec": 3.0,
+      "signal_override_command": "TRIGGER_PREEMPTIVE_GREEN",
+      "co2_mitigation_benefit_pct": 14.5
+    }
+  ]
+}
