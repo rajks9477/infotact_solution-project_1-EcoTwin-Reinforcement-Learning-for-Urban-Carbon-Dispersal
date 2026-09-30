@@ -1,0 +1,32 @@
+{
+  "day": 23,
+  "module": "Transit-Aware Passenger-Delay Reward Formulation",
+  "weights": {
+    "alpha_carbon": 0.45,
+    "beta_passenger_delay": 0.35,
+    "gamma_stops": 0.2
+  },
+  "benchmarks": [
+    {
+      "total_reward": -18.252,
+      "carbon_component": -6.39,
+      "passenger_delay_component": -11.462,
+      "stops_component": -0.4,
+      "scenario": "Peak Morning Inbound (BRT High Load)"
+    },
+    {
+      "total_reward": -4.713,
+      "carbon_component": -4.275,
+      "passenger_delay_component": -0.438,
+      "stops_component": -0.0,
+      "scenario": "Midday Balanced Flow"
+    },
+    {
+      "total_reward": -30.975,
+      "carbon_component": -9.9,
+      "passenger_delay_component": -20.475,
+      "stops_component": -0.6,
+      "scenario": "Heavy Congestion / Red Clearance"
+    }
+  ]
+}
