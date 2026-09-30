@@ -1,0 +1,47 @@
+{
+  "day": 23,
+  "module": "Multi-Modal Transit Signal Priority (TSP)",
+  "fleet_size": 4,
+  "audit_results": [
+    {
+      "bus_id": "BRT_101",
+      "junction": "junc_00",
+      "passengers": 45,
+      "urgency_score": 2.81,
+      "tsp_action": "ACTIVE_GREEN_EXTENSION",
+      "granted_extension_sec": 15.0,
+      "status": "GRANTED_HIGH_PRIORITY",
+      "carbon_offset_kg": 1.215
+    },
+    {
+      "bus_id": "BRT_102",
+      "junction": "junc_02",
+      "passengers": 52,
+      "urgency_score": 5.2,
+      "tsp_action": "ACTIVE_GREEN_EXTENSION",
+      "granted_extension_sec": 13.0,
+      "status": "GRANTED_HIGH_PRIORITY",
+      "carbon_offset_kg": 1.217
+    },
+    {
+      "bus_id": "BRT_103",
+      "junction": "junc_01",
+      "passengers": 38,
+      "urgency_score": -0.32,
+      "tsp_action": "MAINTAIN_COORDINATION",
+      "granted_extension_sec": 0.0,
+      "status": "INSPECTION_ONLY",
+      "carbon_offset_kg": 0.0
+    },
+    {
+      "bus_id": "BRT_104",
+      "junction": "junc_03",
+      "passengers": 60,
+      "urgency_score": 9.0,
+      "tsp_action": "ACTIVE_GREEN_EXTENSION",
+      "granted_extension_sec": 10.2,
+      "status": "GRANTED_HIGH_PRIORITY",
+      "carbon_offset_kg": 1.102
+    }
+  ]
+}
