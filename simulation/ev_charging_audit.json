@@ -1,0 +1,44 @@
+{
+  "day": 24,
+  "module": "EV Eco-Charging Smart Grid Integration",
+  "grid_metrics": {
+    "total_capacity_kw": 1200.0,
+    "current_draw_kw": 1200.0,
+    "grid_load_factor": 1.0,
+    "renewable_share_pct": 68.5
+  },
+  "dispatch_audit": [
+    {
+      "vehicle_id": "EV_FLEET_01",
+      "current_soc_pct": 18.2,
+      "target_hub": "HUB_EAST_03",
+      "dispatch_action": "REROUTE_TO_CHARGING_HUB",
+      "co2_avoidance_g_km": 118.4,
+      "estimated_charge_time_min": 27.8
+    },
+    {
+      "vehicle_id": "EV_FLEET_02",
+      "current_soc_pct": 64.0,
+      "target_hub": null,
+      "dispatch_action": "CONTINUE_ECO_ROUTING",
+      "co2_avoidance_g_km": 142.0,
+      "estimated_charge_time_min": 0.0
+    },
+    {
+      "vehicle_id": "EV_FLEET_03",
+      "current_soc_pct": 12.5,
+      "target_hub": "HUB_EAST_03",
+      "dispatch_action": "REROUTE_TO_CHARGING_HUB",
+      "co2_avoidance_g_km": 118.4,
+      "estimated_charge_time_min": 30.4
+    },
+    {
+      "vehicle_id": "EV_FLEET_04",
+      "current_soc_pct": 82.0,
+      "target_hub": null,
+      "dispatch_action": "CONTINUE_ECO_ROUTING",
+      "co2_avoidance_g_km": 142.0,
+      "estimated_charge_time_min": 0.0
+    }
+  ]
+}
