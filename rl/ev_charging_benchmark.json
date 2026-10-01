@@ -1,0 +1,27 @@
+{
+  "day": 24,
+  "module": "EV State-of-Charge & Grid-Aware RL Policy",
+  "benchmarks": [
+    {
+      "total_reward": -3.469,
+      "grid_penalty": -0.384,
+      "battery_penalty": -3.285,
+      "eco_reward": 0.2,
+      "scenario": "High Solar Peak (Noon Grid Flush)"
+    },
+    {
+      "total_reward": -14.255,
+      "grid_penalty": -2.08,
+      "battery_penalty": -12.375,
+      "eco_reward": 0.2,
+      "scenario": "Evening Peak Load (Fossil Backup)"
+    },
+    {
+      "total_reward": -0.88,
+      "grid_penalty": -1.28,
+      "battery_penalty": -0.0,
+      "eco_reward": 0.4,
+      "scenario": "Overnight Baseload Charging"
+    }
+  ]
+}
