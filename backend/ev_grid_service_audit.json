@@ -1,0 +1,69 @@
+{
+  "day": 24,
+  "service": "EV Smart Grid Telemetry & Priority Dispatch Service",
+  "telemetry": {
+    "network_status": "ONLINE",
+    "total_hubs": 4,
+    "total_ports": 36,
+    "available_ports": 12,
+    "total_grid_draw_kw": 1200,
+    "clean_energy_share_pct": 74.2,
+    "average_tariff_usd_kwh": 0.135,
+    "hubs": [
+      {
+        "id": "HUB-01-N",
+        "name": "North Gate Superhub",
+        "capacity_chargers": 8,
+        "available_ports": 2,
+        "load_kw": 300,
+        "rate_per_kwh": 0.12
+      },
+      {
+        "id": "HUB-02-C",
+        "name": "Central Arterial Plaza",
+        "capacity_chargers": 12,
+        "available_ports": 1,
+        "load_kw": 550,
+        "rate_per_kwh": 0.18
+      },
+      {
+        "id": "HUB-03-E",
+        "name": "East Logistic Depot",
+        "capacity_chargers": 6,
+        "available_ports": 4,
+        "load_kw": 100,
+        "rate_per_kwh": 0.1
+      },
+      {
+        "id": "HUB-04-S",
+        "name": "South Interchange Hub",
+        "capacity_chargers": 10,
+        "available_ports": 5,
+        "load_kw": 250,
+        "rate_per_kwh": 0.14
+      }
+    ]
+  },
+  "reservation_records": [
+    {
+      "reservation_id": "RES-EV_FLE-2026",
+      "vehicle_id": "EV_FLEET_01",
+      "assigned_hub": "East Logistic Depot",
+      "hub_id": "HUB-03-E",
+      "allocated_power_kw": 50.0,
+      "dynamic_tariff": 0.1,
+      "status": "CONFIRMED",
+      "green_routing_clearance": true
+    },
+    {
+      "reservation_id": "RES-EV_FLE-2026",
+      "vehicle_id": "EV_FLEET_03",
+      "assigned_hub": "South Interchange Hub",
+      "hub_id": "HUB-04-S",
+      "allocated_power_kw": 50.0,
+      "dynamic_tariff": 0.14,
+      "status": "CONFIRMED",
+      "green_routing_clearance": true
+    }
+  ]
+}
