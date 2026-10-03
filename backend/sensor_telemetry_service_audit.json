@@ -1,0 +1,45 @@
+{
+  "day": 25,
+  "service": "Sensor Ingestion & Health Telemetry Service",
+  "audit_report": {
+    "telemetry_stream": "LIVE_WEBSOCKET",
+    "active_sensor_nodes": 4,
+    "average_sensor_health_pct": 94.2,
+    "noise_rejection_pipeline": "EKF_ACTIVE",
+    "dropped_packets_pct": 0.42,
+    "sensors": [
+      {
+        "sensor_id": "IOT-LOOP-01",
+        "type": "Inductive Loop",
+        "junction": "junc_00",
+        "health_pct": 98.5,
+        "noise_floor_db": -42.0,
+        "status": "OPTIMAL"
+      },
+      {
+        "sensor_id": "IOT-NDIR-02",
+        "type": "CO2 Concentration",
+        "junction": "junc_02",
+        "health_pct": 91.2,
+        "noise_floor_db": -28.4,
+        "status": "HIGH_DRIFT_FILTERED"
+      },
+      {
+        "sensor_id": "IOT-RADAR-03",
+        "type": "Doppler Radar",
+        "junction": "junc_01",
+        "health_pct": 99.1,
+        "noise_floor_db": -48.2,
+        "status": "OPTIMAL"
+      },
+      {
+        "sensor_id": "IOT-NDIR-04",
+        "type": "CO2 Concentration",
+        "junction": "junc_03",
+        "health_pct": 88.0,
+        "noise_floor_db": -24.1,
+        "status": "KALMAN_REPAIRED"
+      }
+    ]
+  }
+}
