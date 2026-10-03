@@ -1,0 +1,157 @@
+{
+  "day": 25,
+  "module": "Multi-Sensor Digital Twin Ingestion & Kalman Filtering",
+  "co2_sensor_fusion": [
+    {
+      "raw_reading": 425.2,
+      "filtered_estimate": 423.67,
+      "kalman_gain": 0.7059,
+      "residual_noise": 1.53
+    },
+    {
+      "raw_reading": 438.1,
+      "filtered_estimate": 430.44,
+      "kalman_gain": 0.4691,
+      "residual_noise": 7.66
+    },
+    {
+      "raw_reading": 412.5,
+      "filtered_estimate": 423.39,
+      "kalman_gain": 0.3928,
+      "residual_noise": 10.89
+    },
+    {
+      "raw_reading": 465.0,
+      "filtered_estimate": 438.51,
+      "kalman_gain": 0.3633,
+      "residual_noise": 26.49
+    },
+    {
+      "raw_reading": 440.2,
+      "filtered_estimate": 439.1,
+      "kalman_gain": 0.3511,
+      "residual_noise": 1.1
+    },
+    {
+      "raw_reading": 452.8,
+      "filtered_estimate": 443.84,
+      "kalman_gain": 0.3459,
+      "residual_noise": 8.96
+    },
+    {
+      "raw_reading": 478.1,
+      "filtered_estimate": 455.62,
+      "kalman_gain": 0.3437,
+      "residual_noise": 22.48
+    },
+    {
+      "raw_reading": 461.3,
+      "filtered_estimate": 457.56,
+      "kalman_gain": 0.3427,
+      "residual_noise": 3.74
+    },
+    {
+      "raw_reading": 449.0,
+      "filtered_estimate": 454.63,
+      "kalman_gain": 0.3423,
+      "residual_noise": 5.63
+    },
+    {
+      "raw_reading": 492.4,
+      "filtered_estimate": 467.55,
+      "kalman_gain": 0.3422,
+      "residual_noise": 24.85
+    },
+    {
+      "raw_reading": 480.1,
+      "filtered_estimate": 471.85,
+      "kalman_gain": 0.3421,
+      "residual_noise": 8.25
+    },
+    {
+      "raw_reading": 471.5,
+      "filtered_estimate": 471.73,
+      "kalman_gain": 0.342,
+      "residual_noise": 0.23
+    }
+  ],
+  "flow_sensor_fusion": [
+    {
+      "raw_reading": 32.0,
+      "filtered_estimate": 31.41,
+      "kalman_gain": 0.7059,
+      "residual_noise": 0.59
+    },
+    {
+      "raw_reading": 48.0,
+      "filtered_estimate": 39.19,
+      "kalman_gain": 0.4691,
+      "residual_noise": 8.81
+    },
+    {
+      "raw_reading": 25.0,
+      "filtered_estimate": 33.62,
+      "kalman_gain": 0.3928,
+      "residual_noise": 8.62
+    },
+    {
+      "raw_reading": 60.0,
+      "filtered_estimate": 43.2,
+      "kalman_gain": 0.3633,
+      "residual_noise": 16.8
+    },
+    {
+      "raw_reading": 52.0,
+      "filtered_estimate": 46.29,
+      "kalman_gain": 0.3511,
+      "residual_noise": 5.71
+    },
+    {
+      "raw_reading": 45.0,
+      "filtered_estimate": 45.84,
+      "kalman_gain": 0.3459,
+      "residual_noise": 0.84
+    },
+    {
+      "raw_reading": 68.0,
+      "filtered_estimate": 53.46,
+      "kalman_gain": 0.3437,
+      "residual_noise": 14.54
+    },
+    {
+      "raw_reading": 55.0,
+      "filtered_estimate": 53.99,
+      "kalman_gain": 0.3427,
+      "residual_noise": 1.01
+    },
+    {
+      "raw_reading": 50.0,
+      "filtered_estimate": 52.62,
+      "kalman_gain": 0.3423,
+      "residual_noise": 2.62
+    },
+    {
+      "raw_reading": 72.0,
+      "filtered_estimate": 59.25,
+      "kalman_gain": 0.3422,
+      "residual_noise": 12.75
+    },
+    {
+      "raw_reading": 64.0,
+      "filtered_estimate": 60.88,
+      "kalman_gain": 0.3421,
+      "residual_noise": 3.12
+    },
+    {
+      "raw_reading": 58.0,
+      "filtered_estimate": 59.89,
+      "kalman_gain": 0.342,
+      "residual_noise": 1.89
+    }
+  ],
+  "performance": {
+    "mean_co2_noise_reduction_ppm": 10.15,
+    "snr_improvement_db": 8.42,
+    "status": "CONVERGED"
+  }
+}
