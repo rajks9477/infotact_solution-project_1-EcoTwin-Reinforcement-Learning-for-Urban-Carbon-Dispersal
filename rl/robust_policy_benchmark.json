@@ -1,0 +1,39 @@
+{
+  "day": 25,
+  "module": "Robust Policy Under Sensor Noise",
+  "comparison": {
+    "filtered_observation": {
+      "mode": "EKF_FILTERED",
+      "observed_state": [
+        45.042,
+        12.001,
+        0.366,
+        420.043,
+        37.975,
+        14.988,
+        0.509,
+        439.946
+      ],
+      "policy_confidence": 0.945,
+      "action_stability": "STABLE_SMOOTH",
+      "co2_mitigation_efficiency_pct": 21.8
+    },
+    "raw_noisy_observation": {
+      "mode": "RAW_NOISY",
+      "observed_state": [
+        45.157,
+        12.348,
+        0.715,
+        419.784,
+        38.367,
+        14.531,
+        0.23,
+        439.873
+      ],
+      "policy_confidence": 0.545,
+      "action_stability": "DEGRADED_JITTER",
+      "co2_mitigation_efficiency_pct": 15.2
+    },
+    "efficiency_gain_with_ekf_pct": 6.6
+  }
+}
