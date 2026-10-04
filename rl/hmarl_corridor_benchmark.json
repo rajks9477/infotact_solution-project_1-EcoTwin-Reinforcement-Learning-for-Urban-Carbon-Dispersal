@@ -1,0 +1,103 @@
+{
+  "day": 26,
+  "module": "Hierarchical Multi-Agent RL Corridor Coordination",
+  "meta_interval_sec": 30,
+  "benchmarks": [
+    {
+      "meta_bias": "MAX_FLUSH_DOWNWIND",
+      "regional_plume_density_ppm": 485.0,
+      "micro_agent_actions": [
+        {
+          "junction_id": "junc_00",
+          "queue_length": 14,
+          "allocated_green_sec": 65.0,
+          "local_stop_reduction_pct": 33.1
+        },
+        {
+          "junction_id": "junc_01",
+          "queue_length": 22,
+          "allocated_green_sec": 65.0,
+          "local_stop_reduction_pct": 33.1
+        },
+        {
+          "junction_id": "junc_02",
+          "queue_length": 18,
+          "allocated_green_sec": 65.0,
+          "local_stop_reduction_pct": 33.1
+        },
+        {
+          "junction_id": "junc_03",
+          "queue_length": 25,
+          "allocated_green_sec": 65.0,
+          "local_stop_reduction_pct": 33.1
+        }
+      ],
+      "regional_co2_dispersion_gain_pct": 23.4,
+      "scenario_name": "Heavy Downwind Stagnation"
+    },
+    {
+      "meta_bias": "BALANCED_THROUGHPUT",
+      "regional_plume_density_ppm": 420.0,
+      "micro_agent_actions": [
+        {
+          "junction_id": "junc_00",
+          "queue_length": 8,
+          "allocated_green_sec": 49.4,
+          "local_stop_reduction_pct": 24.5
+        },
+        {
+          "junction_id": "junc_01",
+          "queue_length": 12,
+          "allocated_green_sec": 56.6,
+          "local_stop_reduction_pct": 24.5
+        },
+        {
+          "junction_id": "junc_02",
+          "queue_length": 9,
+          "allocated_green_sec": 51.2,
+          "local_stop_reduction_pct": 24.5
+        },
+        {
+          "junction_id": "junc_03",
+          "queue_length": 11,
+          "allocated_green_sec": 54.8,
+          "local_stop_reduction_pct": 24.5
+        }
+      ],
+      "regional_co2_dispersion_gain_pct": 18.2,
+      "scenario_name": "Nominal Arterial Transit"
+    },
+    {
+      "meta_bias": "MAX_FLUSH_DOWNWIND",
+      "regional_plume_density_ppm": 460.0,
+      "micro_agent_actions": [
+        {
+          "junction_id": "junc_00",
+          "queue_length": 20,
+          "allocated_green_sec": 65.0,
+          "local_stop_reduction_pct": 33.1
+        },
+        {
+          "junction_id": "junc_01",
+          "queue_length": 10,
+          "allocated_green_sec": 59.3,
+          "local_stop_reduction_pct": 33.1
+        },
+        {
+          "junction_id": "junc_02",
+          "queue_length": 24,
+          "allocated_green_sec": 65.0,
+          "local_stop_reduction_pct": 33.1
+        },
+        {
+          "junction_id": "junc_03",
+          "queue_length": 8,
+          "allocated_green_sec": 54.4,
+          "local_stop_reduction_pct": 33.1
+        }
+      ],
+      "regional_co2_dispersion_gain_pct": 23.4,
+      "scenario_name": "Crosswind Asymmetric Load"
+    }
+  ]
+}
