@@ -1,0 +1,37 @@
+{
+  "day": 26,
+  "service": "Regional Arterial Corridor Coordination Service",
+  "telemetry": {
+    "system_mode": "HIERARCHICAL_MARL_COORDINATED",
+    "total_corridors": 2,
+    "mean_bandwidth_efficiency_pct": 33.75,
+    "regional_stops_avoided_pct": 28.5,
+    "total_carbon_abatement_kg_h": 41.12,
+    "corridors": [
+      {
+        "id": "COR-NS-01",
+        "name": "North-South Arterial Expressway",
+        "junctions": [
+          "junc_00",
+          "junc_02"
+        ],
+        "cycle_sec": 90,
+        "bandwidth_pct": 36.5,
+        "speed_kmh": 45.0,
+        "status": "SYNCHRONIZED"
+      },
+      {
+        "id": "COR-EW-02",
+        "name": "East-West Transit Boulevard",
+        "junctions": [
+          "junc_01",
+          "junc_03"
+        ],
+        "cycle_sec": 90,
+        "bandwidth_pct": 31.0,
+        "speed_kmh": 40.0,
+        "status": "SYNCHRONIZED"
+      }
+    ]
+  }
+}
