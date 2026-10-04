@@ -1,0 +1,36 @@
+{
+  "day": 26,
+  "module": "Hierarchical Multi-Agent Regional Corridor Coordination",
+  "cycle_length_sec": 90,
+  "plans": [
+    {
+      "corridor_id": "CORRIDOR_NORTH_SOUTH",
+      "junctions": [
+        "junc_00",
+        "junc_02"
+      ],
+      "target_speed_kmh": 45.0,
+      "progression_offset_sec": 32.0,
+      "green_band_efficiency_pct": 36.0,
+      "arterial_stops_avoided_pct": 28.5,
+      "corridor_co2_reduction_kg_h": 23.2
+    },
+    {
+      "corridor_id": "CORRIDOR_EAST_WEST",
+      "junctions": [
+        "junc_01",
+        "junc_03"
+      ],
+      "target_speed_kmh": 39.6,
+      "progression_offset_sec": 36.4,
+      "green_band_efficiency_pct": 40.0,
+      "arterial_stops_avoided_pct": 28.5,
+      "corridor_co2_reduction_kg_h": 17.92
+    }
+  ],
+  "metrics": {
+    "total_corridor_co2_avoided_kg_h": 41.12,
+    "mean_progression_efficiency_pct": 34.0,
+    "status": "SYNCHRONIZED"
+  }
+}
