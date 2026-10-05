@@ -1,0 +1,31 @@
+{
+  "day": 27,
+  "module": "Anti-Spillback Penalty Reward Engine",
+  "penalty_weight": 2.5,
+  "benchmarks": [
+    {
+      "total_reward": -12.0,
+      "carbon_component": -12.0,
+      "spillback_penalty": -0.0,
+      "critical_links_count": 0,
+      "gridlock_prevented": true,
+      "scenario_name": "Free-Flow Balanced"
+    },
+    {
+      "total_reward": -50.722,
+      "carbon_component": -18.5,
+      "spillback_penalty": -32.222,
+      "critical_links_count": 2,
+      "gridlock_prevented": false,
+      "scenario_name": "Impending Arterial Spillback"
+    },
+    {
+      "total_reward": -24.0,
+      "carbon_component": -24.0,
+      "spillback_penalty": -0.0,
+      "critical_links_count": 0,
+      "gridlock_prevented": true,
+      "scenario_name": "Heavy Commuter Surge Mitigated"
+    }
+  ]
+}
