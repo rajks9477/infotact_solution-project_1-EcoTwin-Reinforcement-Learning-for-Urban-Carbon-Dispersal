@@ -1,0 +1,52 @@
+{
+  "day": 27,
+  "module": "Cross-Corridor Traffic Spillback Prevention & Gridlock Guard",
+  "critical_links_detected": 2,
+  "total_co2_spike_prevented_kg": 11.45,
+  "evaluations": [
+    {
+      "link_id": "LINK_00_02",
+      "upstream_junction": "junc_00",
+      "downstream_junction": "junc_02",
+      "occupancy_pct": 90.0,
+      "guard_status": "CRITICAL_SPILLBACK_RISK",
+      "action": "UPSTREAM_METERING_ACTIVE",
+      "upstream_metering_pct": 45.0,
+      "co2_spike_avoided_kg": 5.832,
+      "prevention_score": 0.96
+    },
+    {
+      "link_id": "LINK_01_03",
+      "upstream_junction": "junc_01",
+      "downstream_junction": "junc_03",
+      "occupancy_pct": 46.7,
+      "guard_status": "FLOW_NOMINAL",
+      "action": "NORMAL_PROGRESSION",
+      "upstream_metering_pct": 0.0,
+      "co2_spike_avoided_kg": 0.0,
+      "prevention_score": 1.0
+    },
+    {
+      "link_id": "LINK_02_00",
+      "upstream_junction": "junc_02",
+      "downstream_junction": "junc_00",
+      "occupancy_pct": 36.7,
+      "guard_status": "FLOW_NOMINAL",
+      "action": "NORMAL_PROGRESSION",
+      "upstream_metering_pct": 0.0,
+      "co2_spike_avoided_kg": 0.0,
+      "prevention_score": 1.0
+    },
+    {
+      "link_id": "LINK_03_01",
+      "upstream_junction": "junc_03",
+      "downstream_junction": "junc_01",
+      "occupancy_pct": 86.7,
+      "guard_status": "CRITICAL_SPILLBACK_RISK",
+      "action": "UPSTREAM_METERING_ACTIVE",
+      "upstream_metering_pct": 45.0,
+      "co2_spike_avoided_kg": 5.616,
+      "prevention_score": 0.96
+    }
+  ]
+}
