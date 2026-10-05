@@ -1,0 +1,50 @@
+{
+  "day": 27,
+  "service": "Anti-Spillback & Gridlock Guard Telemetry Service",
+  "telemetry": {
+    "guard_engine_state": "ACTIVE_DEFENSE",
+    "total_links": 4,
+    "critical_links_count": 2,
+    "mean_link_occupancy_pct": 65.0,
+    "prevented_gridlock_events": 8,
+    "co2_emissions_surge_avoided_kg": 24.65,
+    "links": [
+      {
+        "link_id": "LINK_00_02",
+        "upstream": "junc_00",
+        "downstream": "junc_02",
+        "queue_pcu": 27,
+        "capacity_pcu": 30,
+        "metering_rate_pct": 45,
+        "status": "METERING_ACTIVE"
+      },
+      {
+        "link_id": "LINK_01_03",
+        "upstream": "junc_01",
+        "downstream": "junc_03",
+        "queue_pcu": 14,
+        "capacity_pcu": 30,
+        "metering_rate_pct": 0,
+        "status": "NOMINAL"
+      },
+      {
+        "link_id": "LINK_02_00",
+        "upstream": "junc_02",
+        "downstream": "junc_00",
+        "queue_pcu": 11,
+        "capacity_pcu": 30,
+        "metering_rate_pct": 0,
+        "status": "NOMINAL"
+      },
+      {
+        "link_id": "LINK_03_01",
+        "upstream": "junc_03",
+        "downstream": "junc_01",
+        "queue_pcu": 26,
+        "capacity_pcu": 30,
+        "metering_rate_pct": 45,
+        "status": "METERING_ACTIVE"
+      }
+    ]
+  }
+}
