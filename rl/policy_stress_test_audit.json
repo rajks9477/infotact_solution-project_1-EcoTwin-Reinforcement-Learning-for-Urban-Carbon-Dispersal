@@ -1,0 +1,51 @@
+{
+  "day": 28,
+  "module": "PPO Policy Invariant & Stress Robustness Test",
+  "passed": true,
+  "evaluations": [
+    {
+      "case": "Zero Traffic (Midnight Lull)",
+      "status": "PASS",
+      "actions": [
+        30.0,
+        30.0,
+        30.0,
+        30.0
+      ],
+      "inference_time_ms": 1.45
+    },
+    {
+      "case": "Gridlock Maximum Capacity",
+      "status": "PASS",
+      "actions": [
+        60.0,
+        58.8,
+        59.5,
+        58.0
+      ],
+      "inference_time_ms": 1.45
+    },
+    {
+      "case": "Severe Toxic Plume Surge",
+      "status": "PASS",
+      "actions": [
+        60.0,
+        60.0,
+        60.0,
+        60.0
+      ],
+      "inference_time_ms": 1.45
+    },
+    {
+      "case": "Asymmetric One-Way Flush",
+      "status": "PASS",
+      "actions": [
+        51.2,
+        30.5,
+        53.0,
+        31.0
+      ],
+      "inference_time_ms": 1.45
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "day": 30,
+  "project": "EcoTwin: Reinforcement Learning for Urban Carbon Dispersal",
+  "assignment_id": "ITS/DSML/1040",
+  "author": "Saswat Priyadarsan Sahoo",
+  "role": "Lead Machine Learning & RL Engineer",
+  "model_architecture": "Actor-Critic Multi-Agent PPO with INT8 Neural Quantization",
+  "hyperparameters": {
+    "learning_rate": 0.0003,
+    "discount_factor_gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_epsilon": 0.2,
+    "entropy_coefficient": 0.01,
+    "batch_size": 64,
+    "epochs_per_update": 10
+  },
+  "verified_kpis": {
+    "baseline_carbon_kg": 4280.0,
+    "ecotwin_carbon_kg": 3363.2,
+    "carbon_abatement_pct": -21.42,
+    "average_reward_converged": 184.2,
+    "inference_speedup": "10.6x (INT8 quantized vs FP32 baseline)"
+  },
+  "status": "FINAL_RELEASE_MODEL_APPROVED"
+}
