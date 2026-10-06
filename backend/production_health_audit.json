@@ -1,0 +1,14 @@
+{
+  "day": 29,
+  "service": "Production Liveness & Performance Telemetry Daemon",
+  "metrics": {
+    "uptime_seconds": 86400,
+    "cpu_utilization_pct": 14.8,
+    "memory_resident_mb": 182.4,
+    "active_websockets": 42,
+    "error_rate_pct": 0.0,
+    "p99_response_ms": 11.2,
+    "liveness_probe": "HEALTHY",
+    "readiness_probe": "READY"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "day": 28,
+  "service": "Microservices End-to-End API Regression Suite",
+  "total_endpoints": 9,
+  "passed": true,
+  "mean_latency_ms": 4.31,
+  "results": [
+    {
+      "endpoint": "/api/dispersion/plume-map",
+      "method": "GET",
+      "status_code": 200,
+      "test_result": "PASS",
+      "latency_ms": 6.2
+    },
+    {
+      "endpoint": "/api/pricing/dynamic-fee",
+      "method": "POST",
+      "status_code": 200,
+      "test_result": "PASS",
+      "latency_ms": 3.8
+    },
+    {
+      "endpoint": "/api/preemption/evp-status",
+      "method": "GET",
+      "status_code": 200,
+      "test_result": "PASS",
+      "latency_ms": 4.1
+    },
+    {
+      "endpoint": "/api/v2x/spat-broadcast",
+      "method": "GET",
+      "status_code": 200,
+      "test_result": "PASS",
+      "latency_ms": 2.9
+    },
+    {
+      "endpoint": "/api/transit/headways",
+      "method": "GET",
+      "status_code": 200,
+      "test_result": "PASS",
+      "latency_ms": 5.4
+    },
+    {
+      "endpoint": "/api/ev/grid-telemetry",
+      "method": "GET",
+      "status_code": 200,
+      "test_result": "PASS",
+      "latency_ms": 4.5
+    },
+    {
+      "endpoint": "/api/sensor/health-report",
+      "method": "GET",
+      "status_code": 200,
+      "test_result": "PASS",
+      "latency_ms": 3.2
+    },
+    {
+      "endpoint": "/api/corridor/telemetry",
+      "method": "GET",
+      "status_code": 200,
+      "test_result": "PASS",
+      "latency_ms": 4.8
+    },
+    {
+      "endpoint": "/api/spillback/guard-status",
+      "method": "GET",
+      "status_code": 200,
+      "test_result": "PASS",
+      "latency_ms": 3.9
+    }
+  ]
+}
