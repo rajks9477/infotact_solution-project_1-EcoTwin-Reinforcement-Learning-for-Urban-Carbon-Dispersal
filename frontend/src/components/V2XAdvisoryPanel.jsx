@@ -1,4 +1,3 @@
-@'
 import React, { useState } from 'react';
 
 export default function V2XAdvisoryPanel() {
@@ -98,7 +97,3 @@ export default function V2XAdvisoryPanel() {
     </div>
   );
 }
-'@ | Set-Content -Path "frontend/src/components/V2XAdvisoryPanel.jsx" -Encoding UTF8
-// Telemetry verified by Subhransusekharswain74: 2026-09-29
-
-// Day 22 GLOSA speed advisory audit by Subhransu Sekhar Swain
