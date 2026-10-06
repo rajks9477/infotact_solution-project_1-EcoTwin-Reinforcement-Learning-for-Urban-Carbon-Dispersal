@@ -65,14 +65,17 @@ async def telemetry_websocket_stream(websocket: WebSocket):
 
 from backend.services.vehicle_stream import vehicle_stream
 
+from typing import Optional
+
 @router.get("/vehicles")
-async def get_live_vehicles(step: int = 1):
+async def get_live_vehicles(step: Optional[int] = None):
     """Returns real-time vehicle GPS coordinates and emissions for frontend dot rendering."""
     return {
-        "step": step,
+        "step": step or vehicle_stream.internal_step,
         "count": 12,
         "vehicles": vehicle_stream.get_live_vehicles(step)
     }
+
 
 from backend.services.async_engine import async_engine
 

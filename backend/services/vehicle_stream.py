@@ -14,6 +14,7 @@ class VehicleStreamService:
     """Service providing live coordinates of vehicles progressing along corridors."""
 
     def __init__(self):
+        self.internal_step = 0
         self.corridor_anchors = {
             "E_S2C": {"name": "South Inbound", "start": [CENTER_LAT - 0.0035, CENTER_LNG], "end": [CENTER_LAT, CENTER_LNG], "type": "passenger_petrol", "emission_base": 420.0},
             "E_N2C": {"name": "North Inbound", "start": [CENTER_LAT + 0.0035, CENTER_LNG], "end": [CENTER_LAT, CENTER_LNG], "type": "delivery_truck", "emission_base": 850.0},
@@ -21,8 +22,14 @@ class VehicleStreamService:
             "E_W2C": {"name": "West Inbound",  "start": [CENTER_LAT, CENTER_LNG - 0.0035], "end": [CENTER_LAT, CENTER_LNG], "type": "city_bus", "emission_base": 1120.0},
         }
 
-    def get_live_vehicles(self, step: int = 1) -> List[Dict[str, Any]]:
+    def get_live_vehicles(self, step: int = None) -> List[Dict[str, Any]]:
         """Returns instantaneous vehicle fleet coordinates and emission profiles."""
+        if step is None:
+            self.internal_step += 1
+            step = self.internal_step
+        else:
+            self.internal_step = step
+            
         vehicles = []
         v_counter = 1
 
