@@ -252,3 +252,18 @@ The EcoTwin frontend dashboard provides an interactive digital twin interface fo
 * **`SpillbackGuardPanel.jsx`**: Visual link capacity heatmaps with alert indicators (Nominal <60%, Warning 60-75%, Critical Gridlock >75%) and upstream throttling status.
 * **`E2ETestingDashboard.jsx`**: Live multi-point diagnostic monitor validating simulation physics, API health, and inference latencies.
 * **`FinalExecutiveSummaryModal.jsx`**: Capstone executive report modal presenting carbon dispersal benchmarks (-21.42% CO2) and trip efficiency metrics.
+
+---
+
+## ⚙️ Backend Microservice Architecture & APIs (Lead: Ashutosh)
+
+EcoTwin's backend is architected as an asynchronous, high-throughput FastAPI service pipeline connecting SUMO simulation environments with distributed policy servers.
+
+### Microservice Endpoints
+* `POST /api/v1/corridor/coordination`: Calculates dynamic cycle splits and green-wave offsets based on link density.
+* `POST /api/v1/spillback/guard`: Evaluates upstream bottleneck links and meters traffic inflow when link occupancy exceeds 75%.
+* `GET /api/v1/monitoring/health`: Real-time health daemon monitoring process memory, Redis cache, and policy worker availability.
+* `GET /api/v1/openapi/specification`: Complete OpenAPI 3.1.0 manifest validation for enterprise telemetry integration.
+
+### Container Orchestration
+The multi-service cluster is fully containerized via `docker-compose.yml`, provisioning the FastAPI core, Gymnasium RL policy server, and TraCI simulation bridge.
