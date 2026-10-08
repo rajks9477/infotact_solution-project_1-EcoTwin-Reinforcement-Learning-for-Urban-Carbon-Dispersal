@@ -267,3 +267,17 @@ EcoTwin's backend is architected as an asynchronous, high-throughput FastAPI ser
 
 ### Container Orchestration
 The multi-service cluster is fully containerized via `docker-compose.yml`, provisioning the FastAPI core, Gymnasium RL policy server, and TraCI simulation bridge.
+
+---
+
+## 🧠 Multi-Agent Reinforcement Learning Engine (Lead: Saswat)
+
+EcoTwin utilizes a 2-tier Hierarchical Multi-Agent Reinforcement Learning (MARL) framework based on Proximal Policy Optimization (PPO).
+
+### Policy Architecture
+* **Corridor Coordinator Policy**: Regulates global progression speed and phase offsets across adjacent arterial intersections.
+* **Local Junction Policies**: Decentralized PPO actors selecting optimal phase durations to minimize queue build-up.
+* **Anti-Spillback Reward Function**: Non-linear penalty scaling applied when downstream arterial link occupancy exceeds safe capacity thresholds.
+
+### Quantization & Micro-Batch Benchmark
+Trained models are quantized to **INT8** via ONNX Runtime and TensorRT, delivering a **10.6x inference speedup** with sub-4ms micro-batch latency for real-time edge deployment.
