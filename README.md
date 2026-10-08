@@ -240,3 +240,15 @@ Simulation physics are powered by Eclipse SUMO (Simulation of Urban MObility) pa
   * **-21.42%** reduction in urban carbon emissions.
   * **-34.8%** reduction in total intersection delays.
   * **100%** mitigation of cross-corridor spillback gridlocks.
+
+---
+
+## 🖥️ Frontend Digital Twin & Telemetry Suite (Lead: Subhransu Sekhar Swain)
+
+The EcoTwin frontend dashboard provides an interactive digital twin interface for urban corridor traffic and environmental emissions monitoring.
+
+### Architecture & UI Modules
+* **`CorridorCoordinationPanel.jsx`**: Real-time arterial green-wave progression telemetry, dynamic signal offset controls, and inter-junction delay tracking.
+* **`SpillbackGuardPanel.jsx`**: Visual link capacity heatmaps with alert indicators (Nominal <60%, Warning 60-75%, Critical Gridlock >75%) and upstream throttling status.
+* **`E2ETestingDashboard.jsx`**: Live multi-point diagnostic monitor validating simulation physics, API health, and inference latencies.
+* **`FinalExecutiveSummaryModal.jsx`**: Capstone executive report modal presenting carbon dispersal benchmarks (-21.42% CO2) and trip efficiency metrics.
